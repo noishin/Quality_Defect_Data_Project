@@ -1,3 +1,4 @@
+// Quality Defect Data Project
 const data = [
   {
     "wafer_id": 1,
