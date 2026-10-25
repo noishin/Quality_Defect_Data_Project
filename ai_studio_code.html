@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Character encoding and responsive viewport settings -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Application title and metadata -->
+    <title>Quality Defect Data Dashboard</title>
+    <meta
+      name="description"
+      content="Interactive semiconductor wafer quality defect dataset viewer with live filtering and process step distribution chart."
+    />
+    <meta property="og:title" content="Quality Defect Data Dashboard" />
+    <meta
+      property="og:description"
+      content="Interactive semiconductor wafer quality defect dataset viewer with live filtering and process step distribution chart."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Step 1: Load external stylesheet using relative file path -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Main page container -->
+    <div class="container">
+      <!-- Page Header: Title and short introduction -->
+      <header>
+        <h1>Quality Defect Data Dashboard</h1>
+        <p>University IT Course — Semiconductor Wafer Quality Analysis</p>
+      </header>
+
+      <!-- Chart Section: Displays process step distribution -->
+      <section class="card">
+        <h2 class="card-title">Number of Wafers per Process Step</h2>
+        <!-- Canvas element where Chart.js will draw the bar chart -->
+        <div class="chart-container">
+          <canvas id="processChart"></canvas>
+        </div>
+      </section>
+
+      <!-- Table Section: Search input and live data table -->
+      <section class="card">
+        <div class="card-title">
+          <h2>Wafer Quality Records</h2>
+          <span class="results-count" id="recordCount">Loading records...</span>
+        </div>
+
+        <!-- Search box controls for live filtering -->
+        <div class="search-controls">
+          <div class="search-box-wrapper">
+            <span class="search-icon" aria-hidden="true">&#128269;</span>
+            <input
+              type="text"
+              id="searchBox"
+              class="search-input"
+              placeholder="Search by Wafer ID, step, or metric..."
+              aria-label="Search dataset"
+            />
+          </div>
+        </div>
+
+        <!-- Table container where table.js dynamically injects HTML -->
+        <div id="tableContainer"></div>
+      </section>
+    </div>
+
+    <!-- Step 2: Load Chart.js library from jsdelivr CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Step 3: Load the dataset file (defines global "data" array) -->
+    <script src="./data.js"></script>
+
+    <!-- Step 4: Load the table script (renders and filters the dataset) -->
+    <script src="./table.js"></script>
+
+    <!-- Step 5: Load the charts script (renders the bar chart) -->
+    <script src="./charts.js"></script>
+  </body>
+</html>
