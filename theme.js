@@ -1,52 +1,99 @@
 
 /* =========================================
    QUALITY DEFECT DATA DASHBOARD
-   Theme Manager
+   Minimal Theme Manager
    ========================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  const themeButton = document.getElementById("themeToggle");
+  const themeButton =
+    document.getElementById("themeToggle");
 
-  if (!themeButton) {
-    console.error("Theme toggle button not found.");
+  const themeIcon =
+    document.getElementById("themeIcon");
+
+
+  // Check required HTML elements
+  if (!themeButton || !themeIcon) {
+
+    console.error(
+      "Theme toggle elements not found."
+    );
+
     return;
   }
 
-  // Read the previously saved theme
-  const savedTheme = localStorage.getItem("dashboard-theme");
 
-  // Use saved theme or default to light
+  // Read saved theme preference
+  let savedTheme = null;
+
+  try {
+    savedTheme = localStorage.getItem("dashboard-theme");
+  } catch (error) {
+    console.warn("Theme preference could not be read.", error);
+  }
+
+
+  // Set initial theme
   const initialTheme =
     savedTheme === "dark" ? "dark" : "light";
 
-  // Apply theme to the page
+
+  // Apply theme
   function applyTheme(theme) {
 
     document.body.setAttribute("data-theme", theme);
 
+
     if (theme === "dark") {
-      themeButton.textContent = "☀️ Light Mode";
+
+      themeIcon.textContent = "☀";
+
       themeButton.setAttribute(
         "aria-label",
         "Switch to light mode"
       );
+
+      themeButton.title = "Switch to light mode";
+
     } else {
-      themeButton.textContent = "🌙 Dark Mode";
+
+      themeIcon.textContent = "☾";
+
       themeButton.setAttribute(
         "aria-label",
         "Switch to dark mode"
       );
+
+      themeButton.title = "Switch to dark mode";
     }
 
+
     // Save selected theme
-    localStorage.setItem("dashboard-theme", theme);
+    try {
+
+      localStorage.setItem(
+        "dashboard-theme",
+        theme
+      );
+
+    } catch (error) {
+
+      console.warn(
+        "Theme preference could not be saved.",
+        error
+      );
+
+    }
+
   }
+
 
   // Apply initial theme
   applyTheme(initialTheme);
 
-  // Toggle theme on button click
+
+  // Handle button click
   themeButton.addEventListener("click", function () {
 
     const currentTheme =
