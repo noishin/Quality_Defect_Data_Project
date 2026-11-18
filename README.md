@@ -6,6 +6,7 @@ Members:
 - Mahdieh Masumi
 - Maryam Bigdeli
 - Arefeh Hosseini
+
 Dataset:
 This project uses the Semiconductor Wafer Defect Classification Dataset, available on Kaggle.
 The dataset contains semiconductor wafer manufacturing measurements used for defect classification and quality analysis.
@@ -14,7 +15,7 @@ The project includes a data file (data.js) containing 199 records with the follo
 -Temperature (°C)
 -Pressure (Torr)
 -Gas Flow (SCCM)
-Etch Rate (nm/min)
+-Etch Rate (nm/min)
 -Voltage (V)
 -Current (mA)
 Manufacturing Process Step
