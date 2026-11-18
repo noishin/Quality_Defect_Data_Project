@@ -1,98 +1,45 @@
 
 /* =========================================
-   QUALITY DEFECT DATA DASHBOARD
-   Process Quality Monitoring
-   IQR-Based Anomaly Detection
+   PROCESS QUALITY MONITORING
+   IQR-Based Statistical Outlier Detection
    ========================================= */
 
 (function () {
-
   const parameters = [
-    {
-      key: "temperature_c",
-      label: "Temperature",
-      unit: "°C"
-    },
-    {
-      key: "pressure_torr",
-      label: "Pressure",
-      unit: "Torr"
-    },
-    {
-      key: "gas_flow_sccm",
-      label: "Gas Flow",
-      unit: "sccm"
-    },
-    {
-      key: "etch_rate_nm_min",
-      label: "Etch Rate",
-      unit: "nm/min"
-    },
-    {
-      key: "voltage_v",
-      label: "Voltage",
-      unit: "V"
-    },
-    {
-      key: "current_ma",
-      label: "Current",
-      unit: "mA"
-    }
+    { key: "temperature_c", label: "Temperature", unit: "°C" },
+    { key: "pressure_torr", label: "Pressure", unit: "Torr" },
+    { key: "gas_flow_sccm", label: "Gas Flow", unit: "sccm" },
+    { key: "etch_rate_nm_min", label: "Etch Rate", unit: "nm/min" },
+    { key: "voltage_v", label: "Voltage", unit: "V" },
+    { key: "current_ma", label: "Current", unit: "mA" }
   ];
 
+  const tableContainer = document.getElementById("qualityAnalysisTable");
+  const totalAnomaliesElement = document.getElementById("totalAnomalies");
+  const parametersAnalyzedElement = document.getElementById("parametersAnalyzed");
 
-  // Convert valid numeric values into numbers
-  function getNumericValues(records, key) {
-    return records
-      .map(record => record[key])
-      .filter(value =>
-        value !== null &&
-        value !== undefined &&
-        value !== "" &&
-        Number.isFinite(Number(value))
-      )
-      .map(Number);
-  }
-
-
-  // Calculate a percentile using linear interpolation
   function calculatePercentile(values, percentile) {
-
-    if (values.length === 0) {
-      return null;
-    }
+    if (!values.length) return null;
 
     const sorted = [...values].sort((a, b) => a - b);
-
     const position = (sorted.length - 1) * percentile;
-    const lowerIndex = Math.floor(position);
-    const upperIndex = Math.ceil(position);
+    const lower = Math.floor(position);
+    const upper = Math.ceil(position);
 
-    if (lowerIndex === upperIndex) {
-      return sorted[lowerIndex];
-    }
+    if (lower === upper) return sorted[lower];
 
-    const weight = position - lowerIndex;
-
-    return (
-      sorted[lowerIndex] * (1 - weight) +
-      sorted[upperIndex] * weight
-    );
+    const weight = position - lower;
+    return sorted[lower] * (1 - weight) + sorted[upper] * weight;
   }
 
-
-  // Detect outliers using the IQR method
   function analyzeParameter(records, parameter) {
-
     const validRecords = records.filter(record => {
       const value = record[parameter.key];
 
-      return (
-        value !== null &&
+      return value !== null &&
         value !== undefined &&
         value !== "" &&
-        Number.isFinite(Number(value))
-      );
+        Number.isFinite(Number(value));
     });
 
     const values = validRecords.map(record =>
@@ -105,8 +52,7 @@
         validCount: values.length,
         outlierCount: 0,
         lowerBound: null,
-        upperBound: null,
-        outliers: []
+        upperBound: null
       };
     }
 
@@ -117,49 +63,141 @@
     const lowerBound = q1 - 1.5 * iqr;
     const upperBound = q3 + 1.5 * iqr;
 
-    const outliers = validRecords.filter(record => {
-      const value = Number(record[parameter.key]);
-
-      return value < lowerBound || value > upperBound;
-    }).map(record => ({
-      waferId: record.wafer_id ?? record.water_id ?? "Unknown",
-      processStep: record.process_step ?? "Unknown",
-      value: Number(record[parameter.key])
-    }));
+    const outlierCount = values.filter(value =>
+      value < lowerBound || value > upperBound
+    ).length;
 
     return {
       ...parameter,
       validCount: values.length,
-      outlierCount: outliers.length,
+      outlierCount,
       lowerBound,
-      upperBound,
-      outliers
+      upperBound
     };
   }
 
-
-  // Analyze all available process parameters
-  function analyzeQuality(records) {
-
-    if (!Array.isArray(records)) {
-      return [];
-    }
-
-    return parameters.map(parameter =>
-      analyzeParameter(records, parameter)
-    );
+  function escapeHTML(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
   }
 
+  function formatValue(value) {
+    if (value === null || !Number.isFinite(value)) {
+      return "N/A";
+    }
 
-  // Make analysis functions available to other dashboard scripts
+    return value.toLocaleString("en-US", {
+      maximumFractionDigits: 3
+    });
+  }
+
+  function renderQualityAnalysis(records) {
+    if (!tableContainer) return;
+
+    const analysis = parameters.map(parameter =>
+      analyzeParameter(records, parameter)
+    );
+
+    const totalOutliers = analysis.reduce(
+      (sum, item) => sum + item.outlierCount,
+      0
+    );
+
+    if (totalAnomaliesElement) {
+      totalAnomaliesElement.textContent = totalOutliers;
+    }
+
+    if (parametersAnalyzedElement) {
+      parametersAnalyzedElement.textContent =
+        analysis.filter(item => item.validCount > 0).length;
+    }
+
+    if (!records.length) {
+      tableContainer.innerHTML =
+        '<p class="empty-message">No records available for analysis.</p>';
+      return;
+    }
+
+    const rows = analysis.map(item => `
+      <tr>
+        <td>${escapeHTML(item.label)}</td>
+        <td>${escapeHTML(item.validCount)}</td>
+        <td>${escapeHTML(item.unit)}</td>
+        <td>${formatValue(item.lowerBound)}</td>
+        <td>${formatValue(item.upperBound)}</td>
+        <td>
+          <span class="status-badge ${
+            item.outlierCount > 0 ? "warning" : "success"
+          }">
+            ${item.outlierCount}
+          </span>
+        </td>
+      </tr>
+    `).join("");
+
+    tableContainer.innerHTML = `
+      <div class="table-responsive">
+        <table class="data-table quality-table">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Valid Records</th>
+              <th>Unit</th>
+              <th>Lower Limit</th>
+              <th>Upper Limit</th>
+              <th>Outlier Findings</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+      <p class="quality-note">
+        Limits are calculated using the IQR method.
+        Statistical outliers are not necessarily confirmed defects.
+      </p>
+    `;
+  }
+
+  function getCurrentRecords() {
+    if (Array.isArray(window.filteredData)) {
+      return window.filteredData;
+    }
+
+    if (Array.isArray(window.data)) {
+      return window.data;
+    }
+
+    return [];
+  }
+
+  function initializeQualityAnalysis() {
+    renderQualityAnalysis(getCurrentRecords());
+  }
+
+  document.addEventListener(
+    "dashboardDataFiltered",
+    function (event) {
+      const records = event.detail &&
+        Array.isArray(event.detail.records)
+        ? event.detail.records
+        : getCurrentRecords();
+
+      renderQualityAnalysis(records);
+    }
+  );
+
+  initializeQualityAnalysis();
+
   window.qualityAnalysis = {
     parameters,
-    analyzeQuality,
     analyzeParameter,
-    calculatePercentile
+    calculatePercentile,
+    renderQualityAnalysis
   };
 
-
-  console.log("Quality Analysis Module Loaded.");
-
+  console.log("Process Quality Monitoring initialized.");
 })();
