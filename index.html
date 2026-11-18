@@ -53,47 +53,77 @@
     </header>
 
 
-    <!-- KPI Statistics Section -->
-    <section class="kpi-grid">
+   
+<!-- Advanced KPI Statistics Section -->
+<section class="kpi-grid dashboard-kpi-grid">
 
-      <div class="kpi-card">
-        <div class="kpi-icon">📊</div>
-        <span class="kpi-label">Total Wafers</span>
-        <h2 id="totalWafers">Loading...</h2>
-        <span class="kpi-description">
-          Total production records
-        </span>
-      </div>
+  <!-- Total Wafers -->
+  <div class="kpi-card kpi-card-enhanced">
+    <div class="kpi-top">
+      <div class="kpi-icon">◈</div>
+      <span class="kpi-status">LIVE DATA</span>
+    </div>
+    <span class="kpi-label">Total Wafers</span>
+    <h2 id="totalWafers">Loading...</h2>
+    <span class="kpi-description">Total production records</span>
+  </div>
 
-      <div class="kpi-card">
-        <div class="kpi-icon">⚙️</div>
-        <span class="kpi-label">Process Stages</span>
-        <h2 id="processStages">Loading...</h2>
-        <span class="kpi-description">
-          Unique manufacturing stages
-        </span>
-      </div>
+  <!-- Process Stages -->
+  <div class="kpi-card kpi-card-enhanced">
+    <div class="kpi-top">
+      <div class="kpi-icon">⚙</div>
+      <span class="kpi-status">PROCESS</span>
+    </div>
+    <span class="kpi-label">Process Stages</span>
+    <h2 id="processStages">Loading...</h2>
+    <span class="kpi-description">Unique manufacturing stages</span>
+  </div>
 
-      <div class="kpi-card">
-        <div class="kpi-icon">🌡️</div>
-        <span class="kpi-label">Average Temperature</span>
-        <h2 id="avgTemperature">Loading...</h2>
-        <span class="kpi-description">
-          Average temperature (°C)
-        </span>
-      </div>
+  <!-- Average Temperature -->
+  <div class="kpi-card kpi-card-enhanced">
+    <div class="kpi-top">
+      <div class="kpi-icon">🌡</div>
+      <span class="kpi-status">THERMAL</span>
+    </div>
+    <span class="kpi-label">Average Temperature</span>
+    <h2 id="avgTemperature">Loading...</h2>
+    <span class="kpi-description">Average process temperature</span>
+  </div>
 
-      <div class="kpi-card">
-        <div class="kpi-icon">📈</div>
-        <span class="kpi-label">Average Pressure</span>
-        <h2 id="avgPressure">Loading...</h2>
-        <span class="kpi-description">
-          Average pressure (Torr)
-        </span>
-      </div>
+  <!-- Average Pressure -->
+  <div class="kpi-card kpi-card-enhanced">
+    <div class="kpi-top">
+      <div class="kpi-icon">◉</div>
+      <span class="kpi-status">PRESSURE</span>
+    </div>
+    <span class="kpi-label">Average Pressure</span>
+    <h2 id="avgPressure">Loading...</h2>
+    <span class="kpi-description">Average chamber pressure</span>
+  </div>
 
-    </section>
+  <!-- Average Etch Rate -->
+  <div class="kpi-card kpi-card-enhanced">
+    <div class="kpi-top">
+      <div class="kpi-icon">↗</div>
+      <span class="kpi-status">ETCHING</span>
+    </div>
+    <span class="kpi-label">Average Etch Rate</span>
+    <h2 id="avgEtchRate">Loading...</h2>
+    <span class="kpi-description">Average etch rate (nm/min)</span>
+  </div>
 
+  <!-- Data Completeness -->
+  <div class="kpi-card kpi-card-enhanced">
+    <div class="kpi-top">
+      <div class="kpi-icon">▤</div>
+      <span class="kpi-status">DATA QUALITY</span>
+    </div>
+    <span class="kpi-label">Data Completeness</span>
+    <h2 id="dataCompleteness">Loading...</h2>
+    <span class="kpi-description">Valid numeric parameter values</span>
+  </div>
+
+</section>
 
     <!-- Futuristic Analytics Charts -->
 <section class="analytics-section">
