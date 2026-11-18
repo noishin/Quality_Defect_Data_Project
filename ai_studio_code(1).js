@@ -1,143 +1,149 @@
-// =========================================================
-// TABLE.JS - Renders the data table and handles live search
-// =========================================================
 
-// Wait for the HTML document to fully load before running the code
 document.addEventListener("DOMContentLoaded", function () {
-  // Grab the search input element from the HTML
-  var searchInput = document.getElementById("searchBox");
-  
-  // Grab the container element where the table will be injected
-  var tableContainer = document.getElementById("tableContainer");
+  const searchInput = document.getElementById("searchBox");
+  const processFilter = document.getElementById("processFilter");
+  const tableContainer = document.getElementById("tableContainer");
+  const recordCount = document.getElementById("recordCount");
 
-  // Grab the element showing the count of visible records
-  var recordCount = document.getElementById("recordCount");
+  if (!Array.isArray(window.data)) {
+    console.error("Dataset not found. Check data.js.");
+    return;
+  }
 
-  // Helper function to return a clean CSS class name for each process step badge
+  // Shared filtered data for the dashboard
+  window.filteredData = window.data.slice();
+
   function getBadgeClass(step) {
     if (!step) return "";
-    var lower = step.toLowerCase();
-    if (lower.indexOf("deposition") !== -1) return "step-deposition";
-    if (lower.indexOf("etching") !== -1) return "step-etching";
-    if (lower.indexOf("lithography") !== -1) return "step-lithography";
-    if (lower.indexOf("oxidation") !== -1) return "step-oxidation";
-    if (lower.indexOf("cmp") !== -1) return "step-cmp";
+
+    const lower = String(step).toLowerCase();
+
+    if (lower.includes("deposition")) return "step-deposition";
+    if (lower.includes("etching")) return "step-etching";
+    if (lower.includes("lithography")) return "step-lithography";
+    if (lower.includes("oxidation")) return "step-oxidation";
+    if (lower.includes("cmp")) return "step-cmp";
+
     return "";
   }
 
-  // Function to render the table rows based on a given array of records
-  function renderTable(itemsToDisplay) {
-    // If no records match the search query, display a friendly message
-    if (!itemsToDisplay || itemsToDisplay.length === 0) {
-      tableContainer.innerHTML = '<div class="no-results">No wafer records match your search criteria.</div>';
-      if (recordCount) {
-        recordCount.textContent = "Showing 0 of " + (window.data ? window.data.length : 0) + " records";
-      }
+  function renderTable(records) {
+    if (!records.length) {
+      tableContainer.innerHTML =
+        '<div class="no-results">No wafer records match your search criteria.</div>';
+
+      recordCount.textContent =
+        "Showing 0 of " + window.data.length + " records";
+
       return;
     }
 
-    // Build the table header and body using HTML template strings
-    var html = '<div class="table-responsive">';
-    html += '<table class="data-table">';
-    html += '<thead>';
-    html += '<tr>';
-    html += '<th>Wafer ID</th>';
-    html += '<th>Pressure (Torr)</th>';
-    html += '<th>Gas Flow (sccm)</th>';
-    html += '<th>Etch Rate (nm/min)</th>';
-    html += '<th>Voltage (V)</th>';
-    html += '<th>Current (mA)</th>';
-    html += '<th>Process Step</th>';
-    html += '</tr>';
-    html += '</thead>';
-    html += '<tbody>';
+    let html = `
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Wafer ID</th>
+              <th>Pressure (Torr)</th>
+              <th>Gas Flow (sccm)</th>
+              <th>Etch Rate (nm/min)</th>
+              <th>Voltage (V)</th>
+              <th>Current (mA)</th>
+              <th>Process Step</th>
+            </tr>
+          </thead>
+          <tbody>
+    `;
 
-    // Loop through each item in the filtered list and build table rows
-    for (var i = 0; i < itemsToDisplay.length; i++) {
-      var item = itemsToDisplay[i];
+    records.forEach(function (item) {
+      const id = item.wafer_id ?? item.water_id ?? "-";
+      const pressure = item.pressure_torr ?? "-";
+      const gasFlow = item.gas_flow_sccm ?? "-";
+      const etchRate = item.etch_rate_nm_min ?? "-";
+      const voltage = item.voltage_v ?? "-";
+      const current = item.current_ma ?? "-";
+      const step = item.process_step ?? "-";
 
-      // Support either water_id or wafer_id keys seamlessly
-      var id = item.water_id !== undefined ? item.water_id : item.wafer_id;
-      var pressure = item.pressure_torr !== undefined ? item.pressure_torr : "-";
-      var gasFlow = item.gas_flow_sccm !== undefined ? item.gas_flow_sccm : "-";
-      var etchRate = item.etch_rate_nm_min !== undefined ? item.etch_rate_nm_min : "-";
-      var voltage = item.voltage_v !== undefined ? item.voltage_v : "-";
-      var current = item.current_ma !== undefined ? item.current_ma : "-";
-      var step = item.process_step || "-";
-      var badgeClass = getBadgeClass(step);
-
-      html += '<tr>';
-      html += '<td class="code-cell"><strong>' + id + '</strong></td>';
-      html += '<td class="numeric">' + pressure + '</td>';
-      html += '<td class="numeric">' + gasFlow + '</td>';
-      html += '<td class="numeric">' + etchRate + '</td>';
-      html += '<td class="numeric">' + voltage + '</td>';
-      html += '<td class="numeric">' + current + '</td>';
-      html += '<td><span class="step-badge ' + badgeClass + '">' + step + '</span></td>';
-      html += '</tr>';
-    }
-
-    html += '</tbody>';
-    html += '</table>';
-    html += '</div>';
-
-    // Insert the constructed HTML into the table container
-    tableContainer.innerHTML = html;
-
-    // Update the record count label
-    if (recordCount) {
-      recordCount.textContent = "Showing " + itemsToDisplay.length + " of " + (window.data ? window.data.length : 0) + " records";
-    }
-  }
-
-  // Function to filter records based on the user's search text
-  function filterRows() {
-    // If the global data array is not available, stop
-    if (!window.data || !Array.isArray(window.data)) {
-      tableContainer.innerHTML = '<div class="no-results">No dataset loaded. Check data.js.</div>';
-      return;
-    }
-
-    // Get the lowercase query string without extra leading/trailing whitespace
-    var query = searchInput ? searchInput.value.toLowerCase().trim() : "";
-
-    // If search box is empty, display all records
-    if (!query) {
-      renderTable(window.data);
-      return;
-    }
-
-    // Filter items where at least one property value includes the search query
-    var filtered = window.data.filter(function (item) {
-      var id = (item.water_id !== undefined ? item.water_id : item.wafer_id) || "";
-      var pressure = item.pressure_torr !== undefined ? item.pressure_torr.toString() : "";
-      var gasFlow = item.gas_flow_sccm !== undefined ? item.gas_flow_sccm.toString() : "";
-      var etchRate = item.etch_rate_nm_min !== undefined ? item.etch_rate_nm_min.toString() : "";
-      var voltage = item.voltage_v !== undefined ? item.voltage_v.toString() : "";
-      var current = item.current_ma !== undefined ? item.current_ma.toString() : "";
-      var step = item.process_step ? item.process_step.toString() : "";
-
-      // Check if any of the values contain the query
-      return (
-        id.toString().toLowerCase().indexOf(query) !== -1 ||
-        pressure.toLowerCase().indexOf(query) !== -1 ||
-        gasFlow.toLowerCase().indexOf(query) !== -1 ||
-        etchRate.toLowerCase().indexOf(query) !== -1 ||
-        voltage.toLowerCase().indexOf(query) !== -1 ||
-        current.toLowerCase().indexOf(query) !== -1 ||
-        step.toLowerCase().indexOf(query) !== -1
-      );
+      html += `
+        <tr>
+          <td class="code-cell"><strong>${id}</strong></td>
+          <td class="numeric">${pressure}</td>
+          <td class="numeric">${gasFlow}</td>
+          <td class="numeric">${etchRate}</td>
+          <td class="numeric">${voltage}</td>
+          <td class="numeric">${current}</td>
+          <td>
+            <span class="step-badge ${getBadgeClass(step)}">
+              ${step}
+            </span>
+          </td>
+        </tr>
+      `;
     });
 
-    // Render the filtered rows
-    renderTable(filtered);
+    html += `
+          </tbody>
+        </table>
+      </div>
+    `;
+
+    tableContainer.innerHTML = html;
+
+    recordCount.textContent =
+      "Showing " + records.length +
+      " of " + window.data.length + " records";
   }
 
-  // Listen for typing events in the search input for live filtering
+  function filterRows() {
+    const query = searchInput
+      ? searchInput.value.trim().toLowerCase()
+      : "";
+
+    const selectedStep = processFilter
+      ? processFilter.value
+      : "all";
+
+    window.filteredData = window.data.filter(function (item) {
+      const step = String(item.process_step ?? "");
+
+      const matchesStep =
+        selectedStep === "all" || step === selectedStep;
+
+      const searchableValues = [
+        item.wafer_id,
+        item.water_id,
+        item.pressure_torr,
+        item.gas_flow_sccm,
+        item.etch_rate_nm_min,
+        item.voltage_v,
+        item.current_ma,
+        item.process_step
+      ];
+
+      const matchesSearch = searchableValues.some(function (value) {
+        return String(value ?? "").toLowerCase().includes(query);
+      });
+
+      return matchesStep && matchesSearch;
+    });
+
+    renderTable(window.filteredData);
+
+    // Notify dashboard components that the filters have changed.
+    document.dispatchEvent(
+      new CustomEvent("dashboardDataFiltered", {
+        detail: { records: window.filteredData }
+      })
+    );
+  }
+
   if (searchInput) {
     searchInput.addEventListener("input", filterRows);
   }
 
-  // Initial render on page load
+  if (processFilter) {
+    processFilter.addEventListener("change", filterRows);
+  }
+
   filterRows();
 });
