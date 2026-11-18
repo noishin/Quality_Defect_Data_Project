@@ -123,9 +123,10 @@
       </div>
 
 
-      <!-- Search Controls -->
+      <!-- Search and Filter Controls -->
       <div class="search-controls">
 
+        <!-- Text Search -->
         <div class="search-box-wrapper">
 
           <span class="search-icon" aria-hidden="true">
@@ -142,6 +143,21 @@
 
         </div>
 
+
+        <!-- Process Step Filter -->
+        <select
+          id="processFilter"
+          class="search-input"
+          aria-label="Filter by process step"
+        >
+          <option value="all">All Process Steps</option>
+          <option value="Deposition">Deposition</option>
+          <option value="Etching">Etching</option>
+          <option value="Lithography">Lithography</option>
+          <option value="Oxidation">Oxidation</option>
+          <option value="CMP">CMP</option>
+        </select>
+
       </div>
 
 
@@ -153,7 +169,7 @@
   </div>
 
 
-  <!-- JavaScript Files -->
+  <!-- JavaScript Libraries and Project Files -->
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
