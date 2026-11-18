@@ -606,3 +606,63 @@ body[data-theme="dark"] .step-cmp {
   }
 
 }
+
+/* =========================================
+   19. THEME TOGGLE BUTTON
+   ========================================= */
+
+.theme-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  background: var(--surface);
+  color: var(--text);
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: var(--shadow);
+
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+.theme-toggle:hover {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .theme-controls {
+    margin-bottom: 8px;
+  }
+
+  .theme-toggle {
+    padding: 8px 12px;
+    font-size: 0.82rem;
+  }
+}
