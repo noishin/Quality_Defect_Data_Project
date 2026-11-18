@@ -1,138 +1,163 @@
+
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Character encoding and responsive viewport settings -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Application title and metadata -->
-    <title>Quality Defect Data Dashboard</title>
-    <meta
-      name="description"
-      content="Interactive semiconductor wafer quality defect dataset viewer with live filtering and process step distribution chart."
-    />
-    <meta property="og:title" content="Quality Defect Data Dashboard" />
-    <meta
-      property="og:description"
-      content="Interactive semiconductor wafer quality defect dataset viewer with live filtering and process step distribution chart."
-    />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Step 1: Load external stylesheet using relative file path -->
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <!-- Main page container -->
-    <div class="container">
-      <!-- Page Header: Title and short introduction -->
-      <header>
-        <h1>Quality Defect Data Dashboard</h1>
-        <p>University IT Course — Semiconductor Wafer Quality Analysis</p>
-      </header>
+  <title>Quality Defect Data Dashboard</title>
 
-  <div class="kpi-card">
-    <div class="kpi-icon">📊</div>
-    <p>Total Wafers</p>
-    <h2 id="totalWafers">0</h2>
-    <span>All quality records</span>
-  </div>
+  <meta
+    name="description"
+    content="Interactive semiconductor wafer quality defect dataset viewer with live filtering and process step distribution chart."
+  />
 
-  <div class="kpi-card">
-    <div class="kpi-icon">⚙️</div>
-    <p>Process Stages</p>
-    <h2 id="processStages">0</h2>
-    <span>Manufacturing stages</span>
-  </div>
+  <meta property="og:title" content="Quality Defect Data Dashboard" />
 
-  <div class="kpi-card">
-    <div class="kpi-icon">🌡️</div>
-    <p>Average Temperature</p>
-    <h2 id="avgTemperature">0</h2>
-    <span>Temperature (°C)</span>
-  </div>
+  <meta
+    property="og:description"
+    content="Interactive semiconductor wafer quality defect dataset viewer with live filtering and process step distribution chart."
+  />
 
-  <div class="kpi-card">
-    <div class="kpi-icon">📈</div>
-    <p>Average Pressure</p>
-    <h2 id="avgPressure">0</h2>
-    <span>Pressure (Torr)</span>
-  </div>
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-</section>
-<!-- KPI Statistics Section -->
-<section class="kpi-grid">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
 
-  <div class="kpi-card">
-    <span class="kpi-label">Total Wafers</span>
-    <h2 id="totalWafers">Loading...</h2>
-    <span class="kpi-description">Total production records</span>
-  </div>
+<body>
 
-  <div class="kpi-card">
-    <span class="kpi-label">Process Stages</span>
-    <h2 id="processStages">Loading...</h2>
-    <span class="kpi-description">Unique manufacturing stages</span>
-  </div>
+  <div class="container">
 
-  <div class="kpi-card">
-    <span class="kpi-label">Average Temperature</span>
-    <h2 id="avgTemperature">Loading...</h2>
-    <span class="kpi-description">Average temperature (°C)</span>
-  </div>
+    <!-- Dashboard Header -->
+    <header>
+      <h1>Quality Defect Data Dashboard</h1>
+      <p>University IT Course — Semiconductor Wafer Quality Analysis</p>
+    </header>
 
-  <div class="kpi-card">
-    <span class="kpi-label">Average Pressure</span>
-    <h2 id="avgPressure">Loading...</h2>
-    <span class="kpi-description">Average pressure (Torr)</span>
-  </div>
 
-</section>
-      <!-- Chart Section: Displays process step distribution -->
-      <section class="card">
-        <h2 class="card-title">Number of Wafers per Process Step</h2>
-        <!-- Canvas element where Chart.js will draw the bar chart -->
-        <div class="chart-container">
-          <canvas id="processChart"></canvas>
+    <!-- KPI Statistics Section -->
+    <section class="kpi-grid">
+
+      <!-- Total Wafers -->
+      <div class="kpi-card">
+        <div class="kpi-icon">📊</div>
+        <span class="kpi-label">Total Wafers</span>
+        <h2 id="totalWafers">Loading...</h2>
+        <span class="kpi-description">
+          Total production records
+        </span>
+      </div>
+
+      <!-- Process Stages -->
+      <div class="kpi-card">
+        <div class="kpi-icon">⚙️</div>
+        <span class="kpi-label">Process Stages</span>
+        <h2 id="processStages">Loading...</h2>
+        <span class="kpi-description">
+          Unique manufacturing stages
+        </span>
+      </div>
+
+      <!-- Average Temperature -->
+      <div class="kpi-card">
+        <div class="kpi-icon">🌡️</div>
+        <span class="kpi-label">Average Temperature</span>
+        <h2 id="avgTemperature">Loading...</h2>
+        <span class="kpi-description">
+          Average temperature (°C)
+        </span>
+      </div>
+
+      <!-- Average Pressure -->
+      <div class="kpi-card">
+        <div class="kpi-icon">📈</div>
+        <span class="kpi-label">Average Pressure</span>
+        <h2 id="avgPressure">Loading...</h2>
+        <span class="kpi-description">
+          Average pressure (Torr)
+        </span>
+      </div>
+
+    </section>
+
+
+    <!-- Process Chart Section -->
+    <section class="card">
+
+      <h2 class="card-title">
+        Number of Wafers per Process Step
+      </h2>
+
+      <div class="chart-container">
+        <canvas id="processChart"></canvas>
+      </div>
+
+    </section>
+
+
+    <!-- Data Table Section -->
+    <section class="card">
+
+      <div class="card-title">
+
+        <h2>Wafer Quality Records</h2>
+
+        <span class="results-count" id="recordCount">
+          Loading records...
+        </span>
+
+      </div>
+
+
+      <!-- Search Controls -->
+      <div class="search-controls">
+
+        <div class="search-box-wrapper">
+
+          <span class="search-icon" aria-hidden="true">
+            &#128269;
+          </span>
+
+          <input
+            type="text"
+            id="searchBox"
+            class="search-input"
+            placeholder="Search by Wafer ID, step, or metric..."
+            aria-label="Search dataset"
+          />
+
         </div>
-      </section>
 
-      <!-- Table Section: Search input and live data table -->
-      <section class="card">
-        <div class="card-title">
-          <h2>Wafer Quality Records</h2>
-          <span class="results-count" id="recordCount">Loading records...</span>
-        </div>
+      </div>
 
-        <!-- Search box controls for live filtering -->
-        <div class="search-controls">
-          <div class="search-box-wrapper">
-            <span class="search-icon" aria-hidden="true">&#128269;</span>
-            <input
-              type="text"
-              id="searchBox"
-              class="search-input"
-              placeholder="Search by Wafer ID, step, or metric..."
-              aria-label="Search dataset"
-            />
-          </div>
-        </div>
 
-        <!-- Table container where table.js dynamically injects HTML -->
-        <div id="tableContainer"></div>
-      </section>
-    </div>
+      <!-- Table Container -->
+      <div id="tableContainer"></div>
 
-    <!-- Step 2: Load Chart.js library from jsdelivr CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </section>
 
-    <!-- Step 3: Load the dataset file (defines global "data" array) -->
-    <script src="./data.js"></script>
-    <script src="./dashboard.js"></script>
-    <!-- Step 4: Load the table script (renders and filters the dataset) -->
-    <script src="./ai_studio_code(1).js"></script>
+  </div>
 
-    <!-- Step 5: Load the charts script (renders the bar chart) -->
-    <script src="./charts.js"></script>
-  </body>
+
+  <!-- JavaScript Libraries and Project Files -->
+
+  <!-- Chart.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Dataset -->
+  <script src="./data.js"></script>
+
+  <!-- KPI Calculations -->
+  <script src="./dashboard.js"></script>
+
+  <!-- Table and Search -->
+  <script src="./ai_studio_code(1).js"></script>
+
+  <!-- Charts -->
+  <script src="./charts.js"></script>
+
+</body>
 </html>
