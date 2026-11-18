@@ -1,109 +1,65 @@
 
 /* =========================================
    QUALITY DEFECT DATA DASHBOARD
-   Minimal Modern Design - Version 4
+   Minimal Modern Design - Version 5
    ========================================= */
 
-
-/* =========================================
-   1. DESIGN SYSTEM
-   ========================================= */
-
+/* 1. DESIGN SYSTEM */
 :root {
   color-scheme: light;
-
   --bg: #f4f7fb;
   --surface: #ffffff;
   --surface-soft: #f8fafc;
-
   --text: #172033;
   --text-muted: #64748b;
-
   --primary: #2563eb;
   --primary-soft: #eff6ff;
-
   --border: #e2e8f0;
   --shadow: 0 4px 18px rgba(15, 23, 42, 0.045);
-
   --radius: 16px;
   --transition: 0.25s ease;
 }
 
-
-/* =========================================
-   2. DARK THEME
-   ========================================= */
-
+/* 2. DARK THEME */
 body[data-theme="dark"] {
   color-scheme: dark;
-
   --bg: #101827;
   --surface: #192438;
   --surface-soft: #202e43;
-
   --text: #e8eef7;
   --text-muted: #a1b0c5;
-
   --primary: #60a5fa;
   --primary-soft: #243a58;
-
   --border: #2c3b52;
   --shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
 }
 
-
-/* =========================================
-   3. RESET
-   ========================================= */
-
+/* 3. RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-/* =========================================
-   4. MAIN PAGE
-   ========================================= */
-
+/* 4. MAIN PAGE */
 body {
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Arial,
-    sans-serif;
-
+  font-family: Inter, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
-
   line-height: 1.6;
   padding: 32px 20px;
-
-  transition:
-    background var(--transition),
-    color var(--transition);
+  transition: background var(--transition), color var(--transition);
 }
 
-
-/* =========================================
-   5. MAIN CONTAINER
-   ========================================= */
-
+/* 5. MAIN CONTAINER */
 .container {
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
 }
 
-
-/* =========================================
-   6. THEME TOGGLE
-   ========================================= */
-
+/* 6. THEME TOGGLE */
 .theme-controls {
   display: flex;
   justify-content: flex-end;
@@ -113,28 +69,17 @@ body {
 .theme-toggle {
   width: 44px;
   height: 44px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: var(--surface);
   color: var(--text);
-
   border: 1px solid var(--border);
   border-radius: 50%;
-
   font-size: 1.35rem;
-
   cursor: pointer;
   box-shadow: var(--shadow);
-
-  transition:
-    background var(--transition),
-    color var(--transition),
-    border-color var(--transition),
-    transform var(--transition),
-    box-shadow var(--transition);
+  transition: all var(--transition);
 }
 
 .theme-toggle:hover {
@@ -152,19 +97,7 @@ body {
   line-height: 1;
 }
 
-@media (max-width: 480px) {
-  .theme-toggle {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-}
-
-
-/* =========================================
-   7. DASHBOARD HEADER
-   ========================================= */
-
+/* 7. HEADER */
 header {
   text-align: center;
   margin-bottom: 36px;
@@ -175,7 +108,6 @@ header h1 {
   font-size: clamp(1.7rem, 4vw, 2.5rem);
   font-weight: 750;
   letter-spacing: -1px;
-
   color: var(--text);
   margin-bottom: 8px;
 }
@@ -185,15 +117,10 @@ header p {
   font-size: 0.98rem;
 }
 
-
-/* =========================================
-   8. KPI STATISTICS CARDS
-   ========================================= */
-
+/* 8. KPI CARDS */
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-
   gap: 20px;
   margin-bottom: 26px;
 }
@@ -201,31 +128,21 @@ header p {
 .kpi-card {
   position: relative;
   overflow: hidden;
-
   background: var(--surface);
-
   border: 1px solid var(--border);
   border-radius: var(--radius);
-
   padding: 24px;
   box-shadow: var(--shadow);
-
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition),
-    background var(--transition);
+  transition: all var(--transition);
 }
 
 .kpi-card::before {
   content: "";
-
   position: absolute;
   top: 0;
   left: 0;
-
   width: 4px;
   height: 100%;
-
   background: var(--primary);
 }
 
@@ -241,20 +158,16 @@ header p {
 
 .kpi-label {
   display: block;
-
   color: var(--text-muted);
   font-size: 0.9rem;
   font-weight: 600;
-
   margin-bottom: 10px;
 }
 
 .kpi-card h2 {
   color: var(--text);
-
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 750;
-
   letter-spacing: -0.5px;
   margin-bottom: 8px;
 }
@@ -264,44 +177,27 @@ header p {
   font-size: 0.8rem;
 }
 
-
-/* =========================================
-   9. MAIN DASHBOARD CARDS
-   ========================================= */
-
+/* 9. CARDS */
 .card {
   background: var(--surface);
-
   border: 1px solid var(--border);
   border-radius: var(--radius);
-
   box-shadow: var(--shadow);
-
   padding: 28px;
   margin-bottom: 26px;
-
-  transition:
-    background var(--transition),
-    border-color var(--transition),
-    box-shadow var(--transition);
+  transition: all var(--transition);
 }
 
 .card:hover {
   box-shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
 }
 
-
-/* =========================================
-   10. SECTION TITLES
-   ========================================= */
-
+/* 10. SECTION TITLES */
 .card-title {
   font-size: 1.2rem;
   font-weight: 650;
   color: var(--text);
-
   margin-bottom: 20px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -315,32 +211,20 @@ header p {
   color: var(--text);
 }
 
-
-/* =========================================
-   11. CHART AREA
-   ========================================= */
-
+/* 11. CHART */
 .chart-container {
   position: relative;
-
   width: 100%;
   max-width: 900px;
-
   height: 320px;
-
   margin: 0 auto;
 }
 
-
-/* =========================================
-   12. SEARCH CONTROLS
-   ========================================= */
-
+/* 12. SEARCH */
 .search-controls {
   display: flex;
   flex-direction: column;
   gap: 12px;
-
   margin-bottom: 20px;
 }
 
@@ -352,19 +236,14 @@ header p {
 
 .search-input {
   width: 100%;
-
   padding: 12px 16px 12px 42px;
-
   border: 1px solid var(--border);
   border-radius: 10px;
-
   background: var(--surface-soft);
   color: var(--text);
-
   font-size: 0.95rem;
   outline: none;
-
-  transition: var(--transition);
+  transition: all var(--transition);
 }
 
 .search-input::placeholder {
@@ -374,44 +253,30 @@ header p {
 .search-input:focus {
   border-color: var(--primary);
   background: var(--surface);
-
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
 }
 
 .search-icon {
   position: absolute;
-
   left: 14px;
   top: 50%;
-
   transform: translateY(-50%);
-
   color: var(--text-muted);
   font-size: 1rem;
-
   pointer-events: none;
 }
 
-
-/* =========================================
-   13. RECORD COUNTER
-   ========================================= */
-
+/* 13. RECORD COUNTER */
 .results-count {
   color: var(--text-muted);
   font-size: 0.9rem;
   font-weight: 550;
 }
 
-
-/* =========================================
-   14. RESPONSIVE TABLE
-   ========================================= */
-
+/* 14. TABLES */
 .table-responsive {
   width: 100%;
   overflow-x: auto;
-
   border: 1px solid var(--border);
   border-radius: 12px;
 }
@@ -419,29 +284,22 @@ header p {
 .data-table {
   width: 100%;
   border-collapse: collapse;
-
   text-align: left;
   font-size: 0.9rem;
-
   white-space: nowrap;
 }
 
 .data-table thead th {
   background: var(--surface-soft);
   color: var(--text-muted);
-
   font-weight: 650;
-
   padding: 15px 16px;
-
   border-bottom: 1px solid var(--border);
 }
 
 .data-table tbody td {
   padding: 15px 16px;
-
   color: var(--text);
-
   border-bottom: 1px solid var(--border);
 }
 
@@ -461,35 +319,20 @@ header p {
   border-bottom: none;
 }
 
-
-/* =========================================
-   15. NUMERICAL VALUES
-   ========================================= */
-
+/* 15. NUMERICAL VALUES */
 .data-table td.numeric,
 .data-table td.code-cell {
-  font-family:
-    "SFMono-Regular",
-    Consolas,
-    monospace;
-
+  font-family: "SFMono-Regular", Consolas, monospace;
   font-size: 0.86rem;
 }
 
-
-/* =========================================
-   16. PROCESS STEP BADGES
-   ========================================= */
-
+/* 16. PROCESS BADGES */
 .step-badge {
   display: inline-block;
-
   padding: 5px 11px;
   border-radius: 7px;
-
   font-size: 0.75rem;
   font-weight: 650;
-
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
@@ -519,24 +362,15 @@ header p {
   color: #6b21a8;
 }
 
-
-/* =========================================
-   17. EMPTY SEARCH RESULTS
-   ========================================= */
-
-.no-results {
+/* 17. EMPTY RESULTS */
+.no-results,
+.empty-message {
   text-align: center;
-  padding: 40px 16px;
-
+  padding: 32px 16px;
   color: var(--text-muted);
-  font-style: italic;
 }
 
-
-/* =========================================
-   18. DARK THEME TABLE BADGES
-   ========================================= */
-
+/* 18. DARK BADGES */
 body[data-theme="dark"] .step-deposition {
   background: #203c61;
   color: #93c5fd;
@@ -562,21 +396,107 @@ body[data-theme="dark"] .step-cmp {
   color: #d8b4fe;
 }
 
+/* 19. QUALITY MONITORING */
+.quality-note {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  margin-top: 14px;
+}
 
-/* =========================================
-   19. RESPONSIVE DESIGN
-   ========================================= */
+.quality-investigation {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 26px;
+  box-shadow: var(--shadow);
+}
 
+.quality-investigation .section-heading {
+  margin-bottom: 20px;
+}
+
+.quality-investigation h3 {
+  color: var(--text);
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.quality-investigation .section-heading p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* 20. MODERN DROPDOWN */
+#anomalyParameterFilter {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  min-width: 210px;
+  max-width: 100%;
+  padding: 11px 44px 11px 15px;
+
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 550;
+
+  color: var(--text);
+  background-color: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23647791' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m7 10 5 5 5-5'/%3E%3C/svg%3E");
+
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+
+  cursor: pointer;
+  outline: none;
+
+  transition: all var(--transition);
+}
+
+#anomalyParameterFilter:hover {
+  border-color: var(--primary);
+  background-color: var(--primary-soft);
+}
+
+#anomalyParameterFilter:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+#anomalyParameterFilter option {
+  background: var(--surface);
+  color: var(--text);
+}
+
+/* 21. ANOMALY FILTER GROUP */
+.filter-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filter-group label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* 22. RESPONSIVE */
 @media (max-width: 900px) {
-
   .kpi-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
 }
 
 @media (max-width: 768px) {
-
   body {
     padding: 20px 12px;
   }
@@ -611,10 +531,12 @@ body[data-theme="dark"] .step-cmp {
     padding: 12px;
   }
 
+  .quality-investigation {
+    padding: 18px;
+  }
 }
 
 @media (max-width: 480px) {
-
   header h1 {
     font-size: 1.55rem;
   }
@@ -640,20 +562,12 @@ body[data-theme="dark"] .step-cmp {
     padding: 20px;
   }
 
-}
+  #anomalyParameterFilter {
+    width: 100%;
+  }
 
-/* Modern dropdown arrow */
-#anomalyParameterFilter {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23647791' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  background-size: 16px;
-
-  padding-right: 40px;
-  cursor: pointer;
+  .filter-group {
+    align-items: stretch;
+    flex-direction: column;
+  }
 }
