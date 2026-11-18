@@ -1991,3 +1991,4 @@ const data = [
     "process_step": "Oxidation"
   }
 ];
+window.data = data;
