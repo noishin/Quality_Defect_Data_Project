@@ -23,7 +23,6 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- CSS -->
   <link rel="stylesheet" href="./style.css" />
 </head>
 
@@ -31,29 +30,32 @@
 
   <div class="container">
 
-<!-- Theme Toggle -->
-<div class="theme-controls">
-  <button
-    id="themeToggle"
-    class="theme-toggle"
-    type="button"
-    aria-label="Switch to dark mode"
-  >
-    🌙 Dark Mode
-  </button>
-</div>
+    <!-- Theme Toggle -->
+    <div class="theme-controls">
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Switch to dark mode"
+        title="Switch to dark mode"
+      >
+        <span id="themeIcon" aria-hidden="true">☾</span>
+      </button>
+    </div>
+
 
     <!-- Dashboard Header -->
     <header>
       <h1>Quality Defect Data Dashboard</h1>
-      <p>University IT Course — Semiconductor Wafer Quality Analysis</p>
+      <p>
+        University IT Course — Semiconductor Wafer Quality Analysis
+      </p>
     </header>
 
 
     <!-- KPI Statistics Section -->
     <section class="kpi-grid">
 
-      <!-- Total Wafers -->
       <div class="kpi-card">
         <div class="kpi-icon">📊</div>
         <span class="kpi-label">Total Wafers</span>
@@ -63,7 +65,6 @@
         </span>
       </div>
 
-      <!-- Process Stages -->
       <div class="kpi-card">
         <div class="kpi-icon">⚙️</div>
         <span class="kpi-label">Process Stages</span>
@@ -73,7 +74,6 @@
         </span>
       </div>
 
-      <!-- Average Temperature -->
       <div class="kpi-card">
         <div class="kpi-icon">🌡️</div>
         <span class="kpi-label">Average Temperature</span>
@@ -83,7 +83,6 @@
         </span>
       </div>
 
-      <!-- Average Pressure -->
       <div class="kpi-card">
         <div class="kpi-icon">📈</div>
         <span class="kpi-label">Average Pressure</span>
@@ -154,22 +153,15 @@
   </div>
 
 
-  <!-- JavaScript Libraries and Project Files -->
+  <!-- JavaScript Files -->
 
-  <!-- Chart.js Library -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <!-- Dataset -->
   <script src="./data.js"></script>
-
-  <!-- KPI Calculations -->
   <script src="./dashboard.js"></script>
-
-  <!-- Table and Search -->
   <script src="./ai_studio_code(1).js"></script>
-
-  <!-- Charts -->
   <script src="./charts.js"></script>
   <script src="./theme.js"></script>
+
 </body>
 </html>
