@@ -1,225 +1,434 @@
-/* =========================================================
-   STYLE.CSS - Quality Defect Data Dashboard Styling
-   Clean, modern, responsive layout for university IT course
-   ========================================================= */
+/* =========================================
+   QUALITY DEFECT DATA DASHBOARD
+   Minimal Modern Design - Version 2
+   ========================================= */
 
-/* Reset and basic typography settings */
+/* 1. Design System */
+
+:root {
+  color-scheme: light;
+
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --surface-soft: #f8fafc;
+
+  --text: #172033;
+  --text-muted: #64748b;
+
+  --primary: #2563eb;
+  --primary-soft: #eff6ff;
+
+  --border: #e2e8f0;
+  --shadow: 0 4px 18px rgba(15, 23, 42, 0.045);
+
+  --radius: 16px;
+  --transition: 0.25s ease;
+}
+
+/* 2. Dark Theme - Prepared for Theme Toggle */
+
+body[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #101827;
+  --surface: #192438;
+  --surface-soft: #202e43;
+
+  --text: #e8eef7;
+  --text-muted: #a1b0c5;
+
+  --primary: #60a5fa;
+  --primary-soft: #243a58;
+
+  --border: #2c3b52;
+  --shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
+}
+
+/* 3. Reset */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* 4. Main Page */
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: #f1f5f9; /* Soft light gray-blue background */
-  color: #1e293b;            /* High-contrast slate text color */
-  line-height: 1.5;
-  padding: 24px 16px;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  background: var(--bg);
+  color: var(--text);
+
+  line-height: 1.6;
+  padding: 32px 20px;
+
+  transition:
+    background var(--transition),
+    color var(--transition);
 }
 
-/* Centered main container with maximum width */
+/* 5. Main Container */
+
 .container {
-  max-width: 1100px;
+  width: 100%;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
-/* Header section with page title and description */
+/* 6. Dashboard Header */
+
 header {
   text-align: center;
-  margin-bottom: 28px;
+  margin-bottom: 36px;
+  padding: 16px 10px;
 }
 
 header h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #0f172a;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  font-weight: 750;
+  letter-spacing: -1px;
+  color: var(--text);
   margin-bottom: 8px;
 }
 
 header p {
-  color: #64748b;
-  font-size: 1rem;
+  color: var(--text-muted);
+  font-size: 0.98rem;
 }
 
-/* Card container used for both chart and table sections */
+/* 7. Dashboard Cards */
+
 .card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  padding: 24px;
-  margin-bottom: 24px;
-  border: 1px solid #e2e8f0;
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+
+  padding: 28px;
+  margin-bottom: 26px;
+
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
 }
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
+}
+
+/* 8. Section Titles */
 
 .card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #1e293b;
-  margin-bottom: 16px;
+  font-size: 1.2rem;
+  font-weight: 650;
+  color: var(--text);
+
+  margin-bottom: 20px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 8px;
-}
-
-/* Chart container styling to keep the canvas responsive */
-.chart-container {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  min-height: 280px;
-}
-
-/* Search bar and control area */
-.search-controls {
-  margin-bottom: 18px;
-  display: flex;
-  flex-direction: column;
   gap: 12px;
 }
 
-@media (min-width: 640px) {
-  .search-controls {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
+.card-title h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* 9. Chart Area */
+
+.chart-container {
+  position: relative;
+
+  width: 100%;
+  max-width: 900px;
+
+  height: 320px;
+
+  margin: 0 auto;
+}
+
+/* 10. Search Controls */
+
+.search-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  margin-bottom: 20px;
 }
 
 .search-box-wrapper {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 460px;
 }
 
-/* Styled text input for live filtering */
 .search-input {
   width: 100%;
-  padding: 10px 14px 10px 38px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
+
+  padding: 12px 16px 12px 42px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: var(--surface-soft);
+  color: var(--text);
+
   font-size: 0.95rem;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  background-color: #f8fafc;
+
+  transition: var(--transition);
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
 }
 
 .search-input:focus {
-  background-color: #ffffff;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  border-color: var(--primary);
+  background: var(--surface);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
 }
 
-/* Search icon indicator inside input */
 .search-icon {
   position: absolute;
-  left: 12px;
+
+  left: 14px;
   top: 50%;
+
   transform: translateY(-50%);
-  color: #94a3b8;
-  font-size: 0.9rem;
+
+  color: var(--text-muted);
+  font-size: 1rem;
+
   pointer-events: none;
 }
 
-/* Counter badge showing number of matching rows */
+/* 11. Record Counter */
+
 .results-count {
-  font-size: 0.875rem;
-  color: #64748b;
-  font-weight: 500;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 550;
 }
 
-/* Table wrapper for horizontal scrolling on smaller screens */
+/* 12. Responsive Table */
+
 .table-responsive {
+  width: 100%;
   overflow-x: auto;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
 }
 
-/* Dataset table styling */
 .data-table {
   width: 100%;
   border-collapse: collapse;
+
   text-align: left;
   font-size: 0.9rem;
+
+  white-space: nowrap;
 }
 
-/* Table header formatting */
 .data-table thead th {
-  background-color: #f8fafc;
-  color: #475569;
-  font-weight: 600;
-  padding: 12px 14px;
-  border-bottom: 2px solid #e2e8f0;
-  white-space: nowrap;
+  background: var(--surface-soft);
+  color: var(--text-muted);
+
+  font-weight: 650;
+
+  padding: 15px 16px;
+
+  border-bottom: 1px solid var(--border);
 }
 
-/* Table body rows and cells */
 .data-table tbody td {
-  padding: 12px 14px;
-  border-bottom: 1px solid #e2e8f0;
-  color: #334155;
-  white-space: nowrap;
+  padding: 15px 16px;
+
+  color: var(--text);
+
+  border-bottom: 1px solid var(--border);
 }
 
-/* Alternating zebra stripes for readable data rows */
+.data-table tbody tr {
+  transition: background var(--transition);
+}
+
 .data-table tbody tr:nth-child(even) {
-  background-color: #fcfdfe;
+  background: var(--surface-soft);
 }
 
-/* Highlight row on mouse hover */
 .data-table tbody tr:hover {
-  background-color: #f1f5f9;
+  background: var(--primary-soft);
 }
 
-/* Monospace font for numerical values and IDs */
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* 13. Numerical Values */
+
 .data-table td.numeric,
 .data-table td.code-cell {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+
+  font-size: 0.86rem;
 }
 
-/* Process step badges with distinctive colors */
+/* 14. Process Step Badges */
+
 .step-badge {
   display: inline-block;
-  padding: 3px 8px;
-  border-radius: 9999px;
+
+  padding: 5px 11px;
+
+  border-radius: 7px;
+
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 650;
+
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 
 .step-deposition {
-  background-color: #dbeafe;
+  background: #dbeafe;
   color: #1e40af;
 }
 
 .step-etching {
-  background-color: #fee2e2;
+  background: #fee2e2;
   color: #b91c1c;
 }
 
 .step-lithography {
-  background-color: #fef3c7;
-  color: #b45309;
+  background: #fef3c7;
+  color: #92400e;
 }
 
 .step-oxidation {
-  background-color: #dcfce7;
-  color: #15803d;
+  background: #dcfce7;
+  color: #166534;
 }
 
 .step-cmp {
-  background-color: #f3e8ff;
+  background: #f3e8ff;
   color: #6b21a8;
 }
 
-/* Empty state message when no search matches are found */
+/* 15. Empty Search Results */
+
 .no-results {
   text-align: center;
-  padding: 32px 16px;
-  color: #64748b;
+
+  padding: 40px 16px;
+
+  color: var(--text-muted);
   font-style: italic;
+}
+
+/* 16. Dark Theme Table Badges */
+
+body[data-theme="dark"] .step-deposition {
+  background: #203c61;
+  color: #93c5fd;
+}
+
+body[data-theme="dark"] .step-etching {
+  background: #512d38;
+  color: #fca5a5;
+}
+
+body[data-theme="dark"] .step-lithography {
+  background: #51402a;
+  color: #fcd34d;
+}
+
+body[data-theme="dark"] .step-oxidation {
+  background: #204638;
+  color: #86efac;
+}
+
+body[data-theme="dark"] .step-cmp {
+  background: #45315c;
+  color: #d8b4fe;
+}
+
+/* 17. Mobile Responsive Design */
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 20px 12px;
+  }
+
+  header {
+    margin-bottom: 24px;
+  }
+
+  .card {
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+
+  .card-title h2 {
+    font-size: 1.25rem;
+  }
+
+  .chart-container {
+    height: 260px;
+  }
+
+  .search-box-wrapper {
+    max-width: 100%;
+  }
+
+  .data-table {
+    font-size: 0.82rem;
+  }
+
+  .data-table thead th,
+  .data-table tbody td {
+    padding: 12px;
+  }
+}
+
+/* 18. Small Mobile Screens */
+
+@media (max-width: 420px) {
+
+  header h1 {
+    font-size: 1.55rem;
+  }
+
+  header p {
+    font-size: 0.85rem;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .chart-container {
+    height: 230px;
+  }
 }
