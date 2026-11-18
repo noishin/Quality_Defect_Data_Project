@@ -10,14 +10,14 @@
 
   <meta
     name="description"
-    content="Interactive semiconductor wafer quality defect dataset viewer with live filtering and process step distribution chart."
+    content="Interactive semiconductor wafer quality dashboard with process monitoring, statistical anomaly detection, and data filtering."
   />
 
   <meta property="og:title" content="Quality Defect Data Dashboard" />
 
   <meta
     property="og:description"
-    content="Interactive semiconductor wafer quality defect dataset viewer with live filtering and process step distribution chart."
+    content="Semiconductor wafer quality analysis and process monitoring dashboard."
   />
 
   <meta property="og:type" content="website" />
@@ -109,6 +109,54 @@
     </section>
 
 
+    <!-- Process Quality Monitoring Section -->
+    <section class="card quality-section">
+
+      <h2 class="card-title">
+        Process Quality Monitoring
+      </h2>
+
+      <p class="quality-description">
+        Statistical analysis of process parameters using the IQR method.
+        Outliers are flagged for further investigation and do not
+        necessarily indicate defective wafers.
+      </p>
+
+
+      <!-- Quality Summary Cards -->
+      <div class="kpi-grid quality-kpi-grid">
+
+        <div class="kpi-card">
+          <div class="kpi-icon">⚠️</div>
+          <span class="kpi-label">Total Anomalies</span>
+          <h2 id="totalAnomalies">Loading...</h2>
+          <span class="kpi-description">
+            Detected statistical outliers
+          </span>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon">🔬</div>
+          <span class="kpi-label">Parameters Analyzed</span>
+          <h2 id="parametersAnalyzed">Loading...</h2>
+          <span class="kpi-description">
+            Process variables
+          </span>
+        </div>
+
+      </div>
+
+
+      <!-- Anomaly Summary Table -->
+      <h3 class="quality-subtitle">
+        Anomalies by Parameter
+      </h3>
+
+      <div id="qualityAnalysisTable"></div>
+
+    </section>
+
+
     <!-- Data Table Section -->
     <section class="card">
 
@@ -173,11 +221,23 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+  <!-- Dataset -->
   <script src="./data.js"></script>
+
+  <!-- Dashboard Statistics -->
   <script src="./dashboard.js"></script>
+
+  <!-- Search and Filtering -->
   <script src="./ai_studio_code(1).js"></script>
+
+  <!-- Process Distribution Chart -->
   <script src="./charts.js"></script>
+
+  <!-- Theme Toggle -->
   <script src="./theme.js"></script>
+
+  <!-- Quality Analysis Module -->
+  <script src="./quality-analysis.js"></script>
 
 </body>
 </html>
