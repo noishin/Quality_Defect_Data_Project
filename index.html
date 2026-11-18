@@ -95,18 +95,83 @@
     </section>
 
 
-    <!-- Process Chart Section -->
-    <section class="card">
+    <!-- Futuristic Analytics Charts -->
+<section class="analytics-section">
 
-      <h2 class="card-title">
-        Number of Wafers per Process Step
-      </h2>
+  <div class="analytics-heading">
+    <h2>AI Process Analytics</h2>
+    <p>Advanced statistical visualization of semiconductor wafer data</p>
+  </div>
+
+  <!-- Chart 1: Process Distribution -->
+  <div class="card chart-panel">
+    <h2 class="card-title">Process Distribution</h2>
+    <p class="chart-description">
+      Number of wafers recorded in each manufacturing stage.
+    </p>
+    <div class="chart-container">
+      <canvas id="processChart"></canvas>
+    </div>
+  </div>
+
+  <div class="analytics-grid">
+
+    <!-- Chart 2: Parameter Variation -->
+    <div class="card chart-panel">
+      <h2 class="card-title">Parameter Variation</h2>
+      <p class="chart-description">
+        Variation of a selected parameter across wafer records.
+      </p>
+
+      <select id="trendParameter" class="search-input chart-select">
+        <option value="temperature_c">Temperature (°C)</option>
+        <option value="pressure_torr">Pressure (Torr)</option>
+        <option value="gas_flow_sccm">Gas Flow (sccm)</option>
+        <option value="etch_rate_nm_min">Etch Rate (nm/min)</option>
+        <option value="voltage_v">Voltage (V)</option>
+        <option value="current_ma">Current (mA)</option>
+      </select>
 
       <div class="chart-container">
-        <canvas id="processChart"></canvas>
+        <canvas id="parameterTrendChart"></canvas>
       </div>
+    </div>
 
-    </section>
+    <!-- Chart 3: Parameter Correlation -->
+    <div class="card chart-panel">
+      <h2 class="card-title">Parameter Correlation</h2>
+      <p class="chart-description">
+        Relationship between temperature and etch rate.
+      </p>
+
+      <div class="chart-container">
+        <canvas id="correlationChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Chart 4: Process Stage Comparison -->
+    <div class="card chart-panel chart-panel-wide">
+      <h2 class="card-title">Process Stage Comparison</h2>
+      <p class="chart-description">
+        Comparison of the average selected parameter across process stages.
+      </p>
+
+      <select id="comparisonParameter" class="search-input chart-select">
+        <option value="temperature_c">Temperature (°C)</option>
+        <option value="pressure_torr">Pressure (Torr)</option>
+        <option value="gas_flow_sccm">Gas Flow (sccm)</option>
+        <option value="etch_rate_nm_min">Etch Rate (nm/min)</option>
+        <option value="voltage_v">Voltage (V)</option>
+        <option value="current_ma">Current (mA)</option>
+      </select>
+
+      <div class="chart-container">
+        <canvas id="comparisonChart"></canvas>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
     <!-- Process Quality Monitoring Section -->
