@@ -1,65 +1,153 @@
 
-/* =========================================
+/* =====================================================
    QUALITY DEFECT DATA DASHBOARD
-   Minimal Modern Design - Version 5
-   ========================================= */
+   Professional Industrial Analytics
+   Version 6.0
+   ===================================================== */
 
-/* 1. DESIGN SYSTEM */
+
+/* =====================================================
+   1. DESIGN SYSTEM
+   ===================================================== */
+
 :root {
   color-scheme: light;
-  --bg: #f4f7fb;
+
+  --bg: #f3f6fb;
   --surface: #ffffff;
   --surface-soft: #f8fafc;
+  --surface-hover: #f1f5f9;
+
   --text: #172033;
   --text-muted: #64748b;
+  --text-soft: #94a3b8;
+
   --primary: #2563eb;
+  --primary-hover: #1d4ed8;
   --primary-soft: #eff6ff;
+
+  --success: #16a34a;
+  --success-soft: #dcfce7;
+
+  --warning: #d97706;
+  --warning-soft: #fef3c7;
+
+  --danger: #dc2626;
+  --danger-soft: #fee2e2;
+
   --border: #e2e8f0;
-  --shadow: 0 4px 18px rgba(15, 23, 42, 0.045);
+  --border-strong: #cbd5e1;
+
+  --shadow:
+    0 4px 18px rgba(15, 23, 42, 0.045);
+
+  --shadow-hover:
+    0 12px 30px rgba(15, 23, 42, 0.09);
+
   --radius: 16px;
+  --radius-small: 10px;
+
   --transition: 0.25s ease;
 }
 
-/* 2. DARK THEME */
+
+/* =====================================================
+   2. DARK THEME
+   ===================================================== */
+
 body[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #101827;
-  --surface: #192438;
-  --surface-soft: #202e43;
+
+  --bg: #0d1625;
+  --surface: #172438;
+  --surface-soft: #1d2c42;
+  --surface-hover: #263750;
+
   --text: #e8eef7;
   --text-muted: #a1b0c5;
+  --text-soft: #8293aa;
+
   --primary: #60a5fa;
-  --primary-soft: #243a58;
+  --primary-hover: #93c5fd;
+  --primary-soft: #233b5b;
+
+  --success: #4ade80;
+  --success-soft: #1e4034;
+
+  --warning: #fbbf24;
+  --warning-soft: #493b20;
+
+  --danger: #f87171;
+  --danger-soft: #4b2933;
+
   --border: #2c3b52;
-  --shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
+  --border-strong: #40516b;
+
+  --shadow:
+    0 4px 18px rgba(0, 0, 0, 0.16);
+
+  --shadow-hover:
+    0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* 3. RESET */
+
+/* =====================================================
+   3. RESET
+   ===================================================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 4. MAIN PAGE */
-body {
-  font-family: Inter, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  padding: 32px 20px;
-  transition: background var(--transition), color var(--transition);
+html {
+  scroll-behavior: smooth;
 }
 
-/* 5. MAIN CONTAINER */
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  background: var(--bg);
+  color: var(--text);
+
+  line-height: 1.65;
+  padding: 30px 20px;
+
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+
+/* =====================================================
+   4. MAIN CONTAINER
+   ===================================================== */
+
 .container {
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
 }
 
-/* 6. THEME TOGGLE */
+
+/* =====================================================
+   5. THEME TOGGLE
+   ===================================================== */
+
 .theme-controls {
   display: flex;
   justify-content: flex-end;
@@ -69,16 +157,22 @@ body {
 .theme-toggle {
   width: 44px;
   height: 44px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   background: var(--surface);
   color: var(--text);
+
   border: 1px solid var(--border);
   border-radius: 50%;
-  font-size: 1.35rem;
+
+  font-size: 1.3rem;
+
   cursor: pointer;
   box-shadow: var(--shadow);
+
   transition: all var(--transition);
 }
 
@@ -97,17 +191,22 @@ body {
   line-height: 1;
 }
 
-/* 7. HEADER */
+
+/* =====================================================
+   6. DASHBOARD HEADER
+   ===================================================== */
+
 header {
   text-align: center;
-  margin-bottom: 36px;
-  padding: 16px 10px;
+  margin-bottom: 38px;
+  padding: 18px 10px;
 }
 
 header h1 {
   font-size: clamp(1.7rem, 4vw, 2.5rem);
   font-weight: 750;
   letter-spacing: -1px;
+
   color: var(--text);
   margin-bottom: 8px;
 }
@@ -117,10 +216,15 @@ header p {
   font-size: 0.98rem;
 }
 
-/* 8. KPI CARDS */
+
+/* =====================================================
+   7. KPI GRID
+   ===================================================== */
+
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+
   gap: 20px;
   margin-bottom: 26px;
 }
@@ -128,27 +232,35 @@ header p {
 .kpi-card {
   position: relative;
   overflow: hidden;
+
   background: var(--surface);
+
   border: 1px solid var(--border);
   border-radius: var(--radius);
+
   padding: 24px;
+
   box-shadow: var(--shadow);
+
   transition: all var(--transition);
 }
 
 .kpi-card::before {
   content: "";
+
   position: absolute;
   top: 0;
   left: 0;
+
   width: 4px;
   height: 100%;
+
   background: var(--primary);
 }
 
 .kpi-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  box-shadow: var(--shadow-hover);
 }
 
 .kpi-icon {
@@ -158,16 +270,20 @@ header p {
 
 .kpi-label {
   display: block;
+
   color: var(--text-muted);
   font-size: 0.9rem;
   font-weight: 600;
+
   margin-bottom: 10px;
 }
 
 .kpi-card h2 {
   color: var(--text);
+
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 750;
+
   letter-spacing: -0.5px;
   margin-bottom: 8px;
 }
@@ -177,30 +293,45 @@ header p {
   font-size: 0.8rem;
 }
 
-/* 9. CARDS */
+
+/* =====================================================
+   8. MAIN CARDS
+   ===================================================== */
+
 .card {
   background: var(--surface);
+
   border: 1px solid var(--border);
   border-radius: var(--radius);
+
   box-shadow: var(--shadow);
+
   padding: 28px;
   margin-bottom: 26px;
+
   transition: all var(--transition);
 }
 
 .card:hover {
-  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
+  box-shadow: var(--shadow-hover);
 }
 
-/* 10. SECTION TITLES */
+
+/* =====================================================
+   9. SECTION TITLES
+   ===================================================== */
+
 .card-title {
   font-size: 1.2rem;
   font-weight: 650;
+
   color: var(--text);
   margin-bottom: 20px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   flex-wrap: wrap;
   gap: 12px;
 }
@@ -211,20 +342,32 @@ header p {
   color: var(--text);
 }
 
-/* 11. CHART */
+
+/* =====================================================
+   10. CHART
+   ===================================================== */
+
 .chart-container {
   position: relative;
+
   width: 100%;
   max-width: 900px;
+
   height: 320px;
+
   margin: 0 auto;
 }
 
-/* 12. SEARCH */
+
+/* =====================================================
+   11. SEARCH CONTROLS
+   ===================================================== */
+
 .search-controls {
   display: flex;
   flex-direction: column;
   gap: 12px;
+
   margin-bottom: 20px;
 }
 
@@ -236,13 +379,18 @@ header p {
 
 .search-input {
   width: 100%;
+
   padding: 12px 16px 12px 42px;
+
   border: 1px solid var(--border);
   border-radius: 10px;
+
   background: var(--surface-soft);
   color: var(--text);
+
   font-size: 0.95rem;
   outline: none;
+
   transition: all var(--transition);
 }
 
@@ -253,30 +401,45 @@ header p {
 .search-input:focus {
   border-color: var(--primary);
   background: var(--surface);
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+
+  box-shadow:
+    0 0 0 4px rgba(37, 99, 235, 0.12);
 }
 
 .search-icon {
   position: absolute;
+
   left: 14px;
   top: 50%;
+
   transform: translateY(-50%);
+
   color: var(--text-muted);
   font-size: 1rem;
+
   pointer-events: none;
 }
 
-/* 13. RECORD COUNTER */
+
+/* =====================================================
+   12. RECORD COUNTER
+   ===================================================== */
+
 .results-count {
   color: var(--text-muted);
   font-size: 0.9rem;
   font-weight: 550;
 }
 
-/* 14. TABLES */
+
+/* =====================================================
+   13. TABLES
+   ===================================================== */
+
 .table-responsive {
   width: 100%;
   overflow-x: auto;
+
   border: 1px solid var(--border);
   border-radius: 12px;
 }
@@ -284,22 +447,29 @@ header p {
 .data-table {
   width: 100%;
   border-collapse: collapse;
+
   text-align: left;
   font-size: 0.9rem;
+
   white-space: nowrap;
 }
 
 .data-table thead th {
   background: var(--surface-soft);
   color: var(--text-muted);
+
   font-weight: 650;
+
   padding: 15px 16px;
+
   border-bottom: 1px solid var(--border);
 }
 
 .data-table tbody td {
   padding: 15px 16px;
+
   color: var(--text);
+
   border-bottom: 1px solid var(--border);
 }
 
@@ -319,20 +489,35 @@ header p {
   border-bottom: none;
 }
 
-/* 15. NUMERICAL VALUES */
+
+/* =====================================================
+   14. NUMERICAL VALUES
+   ===================================================== */
+
 .data-table td.numeric,
 .data-table td.code-cell {
-  font-family: "SFMono-Regular", Consolas, monospace;
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+
   font-size: 0.86rem;
 }
 
-/* 16. PROCESS BADGES */
+
+/* =====================================================
+   15. PROCESS BADGES
+   ===================================================== */
+
 .step-badge {
   display: inline-block;
+
   padding: 5px 11px;
   border-radius: 7px;
+
   font-size: 0.75rem;
   font-weight: 650;
+
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
@@ -362,15 +547,6 @@ header p {
   color: #6b21a8;
 }
 
-/* 17. EMPTY RESULTS */
-.no-results,
-.empty-message {
-  text-align: center;
-  padding: 32px 16px;
-  color: var(--text-muted);
-}
-
-/* 18. DARK BADGES */
 body[data-theme="dark"] .step-deposition {
   background: #203c61;
   color: #93c5fd;
@@ -396,29 +572,84 @@ body[data-theme="dark"] .step-cmp {
   color: #d8b4fe;
 }
 
-/* 19. QUALITY MONITORING */
+
+/* =====================================================
+   16. EMPTY RESULTS
+   ===================================================== */
+
+.no-results,
+.empty-message {
+  text-align: center;
+  padding: 35px 16px;
+
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+
+/* =====================================================
+   17. QUALITY MONITORING
+   ===================================================== */
+
+.quality-description,
+.quality-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
 .quality-note {
   color: var(--text-muted);
   font-size: 0.82rem;
   margin-top: 14px;
+  line-height: 1.7;
 }
+
+.quality-kpi-grid {
+  margin-bottom: 24px;
+}
+
+.quality-table {
+  min-width: 650px;
+}
+
+
+/* =====================================================
+   18. ANOMALY INVESTIGATION
+   ===================================================== */
 
 .quality-investigation {
   background: var(--surface);
+
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px;
-  margin-bottom: 26px;
+  border-radius: 18px;
+
+  padding: 28px;
+  margin: 28px 0;
+
   box-shadow: var(--shadow);
+
+  transition: all var(--transition);
+}
+
+.quality-investigation:hover {
+  box-shadow: var(--shadow-hover);
 }
 
 .quality-investigation .section-heading {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid var(--border);
 }
 
 .quality-investigation h3 {
+  font-size: 1.35rem;
+  font-weight: 750;
+
   color: var(--text);
-  font-size: 1.2rem;
+  letter-spacing: -0.4px;
+
   margin-bottom: 6px;
 }
 
@@ -427,31 +658,54 @@ body[data-theme="dark"] .step-cmp {
   font-size: 0.9rem;
 }
 
-/* 20. MODERN DROPDOWN */
+
+/* =====================================================
+   19. ANOMALY FILTER
+   ===================================================== */
+
+.quality-investigation .filter-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+  gap: 14px;
+
+  margin-bottom: 22px;
+}
+
+.quality-investigation .filter-group label {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
 #anomalyParameterFilter {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  min-width: 210px;
-  max-width: 100%;
+  width: 230px;
+  min-height: 46px;
+
   padding: 11px 44px 11px 15px;
 
   font-family: inherit;
   font-size: 0.9rem;
-  font-weight: 550;
+  font-weight: 600;
 
   color: var(--text);
-  background-color: var(--surface);
+
+  background-color: var(--surface-soft);
 
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 11px;
 
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23647791' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m7 10 5 5 5-5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23647791' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m7 10 5 5 5-5'/%3E%3C/svg%3E");
 
   background-repeat: no-repeat;
-  background-position: right 14px center;
-  background-size: 16px;
+  background-position: right 15px center;
+  background-size: 17px;
 
   cursor: pointer;
   outline: none;
@@ -466,7 +720,9 @@ body[data-theme="dark"] .step-cmp {
 
 #anomalyParameterFilter:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+
+  box-shadow:
+    0 0 0 4px rgba(37, 99, 235, 0.12);
 }
 
 #anomalyParameterFilter option {
@@ -474,22 +730,90 @@ body[data-theme="dark"] .step-cmp {
   color: var(--text);
 }
 
-/* 21. ANOMALY FILTER GROUP */
-.filter-group {
-  display: flex;
+
+/* =====================================================
+   20. ANOMALY TABLE
+   ===================================================== */
+
+#anomalyRecordsTable {
+  width: 100%;
+}
+
+#anomalyRecordsTable .table-responsive {
+  border-radius: 12px;
+}
+
+#anomalyRecordsTable .data-table {
+  min-width: 900px;
+}
+
+#anomalyRecordsTable .data-table thead th {
+  font-size: 0.82rem;
+  padding: 16px;
+}
+
+#anomalyRecordsTable .data-table tbody td {
+  font-size: 0.85rem;
+  padding: 15px 16px;
+}
+
+#anomalyRecordsTable .data-table tbody tr:hover {
+  background: var(--primary-soft);
+}
+
+#anomalyRecordsTable .empty-message {
+  background: var(--surface-soft);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 30px;
+}
+
+
+/* =====================================================
+   21. STATUS BADGES
+   ===================================================== */
+
+.status-badge {
+  display: inline-flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 20px;
+  justify-content: center;
+
+  min-width: 30px;
+  padding: 5px 10px;
+
+  border-radius: 8px;
+
+  font-size: 0.8rem;
+  font-weight: 700;
 }
 
-.filter-group label {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  font-weight: 600;
+.status-badge.success {
+  background: var(--success-soft);
+  color: var(--success);
 }
 
-/* 22. RESPONSIVE */
+.status-badge.warning {
+  background: var(--warning-soft);
+  color: var(--warning);
+}
+
+
+/* =====================================================
+   22. ACCESSIBILITY
+   ===================================================== */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+
+/* =====================================================
+   23. RESPONSIVE DESIGN
+   ===================================================== */
+
 @media (max-width: 900px) {
   .kpi-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -532,11 +856,25 @@ body[data-theme="dark"] .step-cmp {
   }
 
   .quality-investigation {
-    padding: 18px;
+    padding: 20px;
+  }
+
+  .quality-investigation .filter-group {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  #anomalyParameterFilter {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
+  body {
+    padding: 16px 10px;
+  }
+
   header h1 {
     font-size: 1.55rem;
   }
@@ -562,12 +900,7 @@ body[data-theme="dark"] .step-cmp {
     padding: 20px;
   }
 
-  #anomalyParameterFilter {
-    width: 100%;
-  }
-
-  .filter-group {
-    align-items: stretch;
-    flex-direction: column;
+  .quality-investigation {
+    padding: 16px;
   }
 }
