@@ -1,7 +1,7 @@
 
 /* =========================================
    PROCESS QUALITY MONITORING
-   IQR-Based Statistical Outlier Detection
+   IQR Anomaly Detection & Investigation
    ========================================= */
 
 (function () {
@@ -14,9 +14,17 @@
     { key: "current_ma", label: "Current", unit: "mA" }
   ];
 
-  const tableContainer = document.getElementById("qualityAnalysisTable");
-  const totalAnomaliesElement = document.getElementById("totalAnomalies");
-  const parametersAnalyzedElement = document.getElementById("parametersAnalyzed");
+  const tableContainer =
+    document.getElementById("qualityAnalysisTable");
+
+  const totalAnomaliesElement =
+    document.getElementById("totalAnomalies");
+
+  const parametersAnalyzedElement =
+    document.getElementById("parametersAnalyzed");
+
+  let currentAnomalies = [];
+  let selectedParameter = "all";
 
   function calculatePercentile(values, percentile) {
     if (!values.length) return null;
@@ -29,7 +37,28 @@
     if (lower === upper) return sorted[lower];
 
     const weight = position - lower;
-    return sorted[lower] * (1 - weight) + sorted[upper] * weight;
+
+    return sorted[lower] * (1 - weight) +
+      sorted[upper] * weight;
+  }
+
+  function escapeHTML(value) {
+    return String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function formatValue(value) {
+    if (value === null || !Number.isFinite(value)) {
+      return "N/A";
+    }
+
+    return value.toLocaleString("en-US", {
+      maximumFractionDigits: 3
+    });
   }
 
   function analyzeParameter(records, parameter) {
@@ -52,7 +81,8 @@
         validCount: values.length,
         outlierCount: 0,
         lowerBound: null,
-        upperBound: null
+        upperBound: null,
+        outliers: []
       };
     }
 
@@ -63,44 +93,161 @@
     const lowerBound = q1 - 1.5 * iqr;
     const upperBound = q3 + 1.5 * iqr;
 
-    const outlierCount = values.filter(value =>
-      value < lowerBound || value > upperBound
-    ).length;
+    const outliers = validRecords
+      .filter(record => {
+        const value = Number(record[parameter.key]);
+
+        return value < lowerBound || value > upperBound;
+      })
+      .map(record => {
+        const value = Number(record[parameter.key]);
+        const isHigh = value > upperBound;
+
+        return {
+          waferId: record.wafer_id ?? record.water_id ?? "Unknown",
+          processStep: record.process_step ?? "Unknown",
+          parameter: parameter.label,
+          parameterKey: parameter.key,
+          unit: parameter.unit,
+          value,
+          lowerBound,
+          upperBound,
+          direction: isHigh ? "Above upper limit" : "Below lower limit",
+          distance: isHigh
+            ? value - upperBound
+            : lowerBound - value
+        };
+      });
 
     return {
       ...parameter,
       validCount: values.length,
-      outlierCount,
+      outlierCount: outliers.length,
       lowerBound,
-      upperBound
+      upperBound,
+      outliers
     };
   }
 
-  function escapeHTML(value) {
-    return String(value)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
+  function getAnalysis(records) {
+    return parameters.map(parameter =>
+      analyzeParameter(records, parameter)
+    );
   }
 
-  function formatValue(value) {
-    if (value === null || !Number.isFinite(value)) {
-      return "N/A";
+  function createInvestigationSection() {
+    if (!tableContainer) return null;
+
+    let section = document.getElementById("anomalyInvestigation");
+
+    if (section) return section;
+
+    section = document.createElement("section");
+    section.id = "anomalyInvestigation";
+    section.className = "quality-investigation";
+
+    section.innerHTML = `
+      <div class="section-heading">
+        <h3>Anomaly Investigation</h3>
+        <p>
+          Detailed records of statistically unusual process measurements.
+        </p>
+      </div>
+
+      <div class="filter-group">
+        <label for="anomalyParameterFilter">
+          Filter by parameter:
+        </label>
+
+        <select id="anomalyParameterFilter">
+          <option value="all">All Parameters</option>
+          ${parameters.map(parameter => `
+            <option value="${parameter.key}">
+              ${escapeHTML(parameter.label)}
+            </option>
+          `).join("")}
+        </select>
+      </div>
+
+      <div id="anomalyRecordsTable"></div>
+    `;
+
+    tableContainer.insertAdjacentElement("afterend", section);
+
+    const filter = section.querySelector("#anomalyParameterFilter");
+
+    filter.addEventListener("change", function () {
+      selectedParameter = this.value;
+      renderAnomalyRecords();
+    });
+
+    return section;
+  }
+
+  function renderAnomalyRecords() {
+    const section = createInvestigationSection();
+    if (!section) return;
+
+    const container =
+      section.querySelector("#anomalyRecordsTable");
+
+    const filteredAnomalies = selectedParameter === "all"
+      ? currentAnomalies
+      : currentAnomalies.filter(item =>
+          item.parameterKey === selectedParameter
+        );
+
+    if (!filteredAnomalies.length) {
+      container.innerHTML = `
+        <p class="empty-message">
+          No statistical outliers found for this selection.
+        </p>
+      `;
+      return;
     }
 
-    return value.toLocaleString("en-US", {
-      maximumFractionDigits: 3
-    });
+    const rows = filteredAnomalies.map(item => `
+      <tr>
+        <td>${escapeHTML(item.waferId)}</td>
+        <td>${escapeHTML(item.processStep)}</td>
+        <td>${escapeHTML(item.parameter)}</td>
+        <td>${formatValue(item.value)} ${escapeHTML(item.unit)}</td>
+        <td>${formatValue(item.lowerBound)}</td>
+        <td>${formatValue(item.upperBound)}</td>
+        <td>${escapeHTML(item.direction)}</td>
+        <td>${formatValue(item.distance)} ${escapeHTML(item.unit)}</td>
+      </tr>
+    `).join("");
+
+    container.innerHTML = `
+      <div class="table-responsive">
+        <table class="data-table quality-table">
+          <thead>
+            <tr>
+              <th>Wafer ID</th>
+              <th>Process Step</th>
+              <th>Parameter</th>
+              <th>Observed Value</th>
+              <th>Lower Limit</th>
+              <th>Upper Limit</th>
+              <th>Detection</th>
+              <th>Distance</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+      <p class="quality-note">
+        These records are statistical outliers identified by the IQR method.
+        They are not automatically confirmed product defects.
+      </p>
+    `;
   }
 
   function renderQualityAnalysis(records) {
     if (!tableContainer) return;
 
-    const analysis = parameters.map(parameter =>
-      analyzeParameter(records, parameter)
-    );
+    const analysis = getAnalysis(records);
 
     const totalOutliers = analysis.reduce(
       (sum, item) => sum + item.outlierCount,
@@ -116,30 +263,18 @@
         analysis.filter(item => item.validCount > 0).length;
     }
 
-    if (!records.length) {
-      tableContainer.innerHTML =
-        '<p class="empty-message">No records available for analysis.</p>';
-      return;
-    }
-
     const rows = analysis.map(item => `
       <tr>
         <td>${escapeHTML(item.label)}</td>
-        <td>${escapeHTML(item.validCount)}</td>
+        <td>${item.validCount}</td>
         <td>${escapeHTML(item.unit)}</td>
         <td>${formatValue(item.lowerBound)}</td>
         <td>${formatValue(item.upperBound)}</td>
-        <td>
-          <span class="status-badge ${
-            item.outlierCount > 0 ? "warning" : "success"
-          }">
-            ${item.outlierCount}
-          </span>
-        </td>
+        <td>${item.outlierCount}</td>
       </tr>
     `).join("");
 
-    tableContainer.innerHTML = `
+    tableContainer.innerHTML = records.length ? `
       <div class="table-responsive">
         <table class="data-table quality-table">
           <thead>
@@ -159,7 +294,13 @@
         Limits are calculated using the IQR method.
         Statistical outliers are not necessarily confirmed defects.
       </p>
+    ` : `
+      <p class="empty-message">No records available for analysis.</p>
     `;
+
+    currentAnomalies = analysis.flatMap(item => item.outliers);
+
+    renderAnomalyRecords();
   }
 
   function getCurrentRecords() {
@@ -174,10 +315,6 @@
     return [];
   }
 
-  function initializeQualityAnalysis() {
-    renderQualityAnalysis(getCurrentRecords());
-  }
-
   document.addEventListener(
     "dashboardDataFiltered",
     function (event) {
@@ -190,7 +327,7 @@
     }
   );
 
-  initializeQualityAnalysis();
+  renderQualityAnalysis(getCurrentRecords());
 
   window.qualityAnalysis = {
     parameters,
@@ -199,5 +336,5 @@
     renderQualityAnalysis
   };
 
-  console.log("Process Quality Monitoring initialized.");
+  console.log("Anomaly Investigation Module Loaded.");
 })();
