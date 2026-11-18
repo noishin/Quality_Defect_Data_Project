@@ -1,194 +1,137 @@
 
 /* =========================================
    QUALITY DEFECT DATA DASHBOARD
-   KPI Statistics Calculator
-   Version 2
+   Dynamic KPI Statistics
    ========================================= */
 
+(function () {
 
-/* =========================================
-   1. INITIALIZE DASHBOARD
-   ========================================= */
-
-function initializeDashboard() {
-
-  console.log("Initializing KPI Dashboard...");
-
-
-  /* =====================================
-     2. GET DATASET
-     ===================================== */
-
-  const records = window.data;
-
-  if (!Array.isArray(records) || records.length === 0) {
-
-    console.error(
-      "Dataset not found or empty. Check data.js."
-    );
-
-    return;
-  }
-
-
-  /* =====================================
-     3. GET HTML ELEMENTS
-     ===================================== */
-
-  const totalWafersElement =
-    document.getElementById("totalWafers");
-
-  const processStagesElement =
-    document.getElementById("processStages");
-
-  const avgTemperatureElement =
-    document.getElementById("avgTemperature");
-
-  const avgPressureElement =
-    document.getElementById("avgPressure");
-
-
-  /* =====================================
-     4. CHECK HTML ELEMENTS
-     ===================================== */
-
-  if (
-    !totalWafersElement ||
-    !processStagesElement ||
-    !avgTemperatureElement ||
-    !avgPressureElement
-  ) {
-
-    console.error(
-      "One or more KPI HTML elements were not found."
-    );
-
-    return;
-  }
-
-
-  /* =====================================
-     5. CALCULATE AVERAGE
-     ===================================== */
-
-  function calculateAverage(field) {
-
+  function calculateAverage(records, field) {
     const values = records
-
       .map(record => record[field])
-
       .filter(value =>
         value !== null &&
         value !== undefined &&
         value !== "" &&
         Number.isFinite(Number(value))
       )
-
       .map(Number);
-
 
     if (values.length === 0) {
       return null;
     }
-
 
     const total = values.reduce(
       (sum, value) => sum + value,
       0
     );
 
-
     return total / values.length;
   }
 
 
-  /* =====================================
-     6. TOTAL WAFERS
-     ===================================== */
+  function updateDashboard(records) {
 
-  const totalWafers = records.length;
+    if (!Array.isArray(records)) {
+      console.error("Invalid dashboard data.");
+      return;
+    }
 
+    const totalWafersElement =
+      document.getElementById("totalWafers");
 
-  /* =====================================
-     7. UNIQUE PROCESS STAGES
-     ===================================== */
+    const processStagesElement =
+      document.getElementById("processStages");
 
-  const processStages = new Set(
+    const avgTemperatureElement =
+      document.getElementById("avgTemperature");
 
-    records
+    const avgPressureElement =
+      document.getElementById("avgPressure");
 
-      .map(record => record.process_step)
-
-      .filter(value =>
-        value !== null &&
-        value !== undefined &&
-        value !== ""
-      )
-
-  ).size;
-
-
-  /* =====================================
-     8. AVERAGE TEMPERATURE
-     ===================================== */
-
-  const avgTemperature =
-    calculateAverage("temperature_c");
+    if (
+      !totalWafersElement ||
+      !processStagesElement ||
+      !avgTemperatureElement ||
+      !avgPressureElement
+    ) {
+      console.error("One or more KPI elements were not found.");
+      return;
+    }
 
 
-  /* =====================================
-     9. AVERAGE PRESSURE
-     ===================================== */
-
-  const avgPressure =
-    calculateAverage("pressure_torr");
+    // Total records in the current filtered dataset
+    const totalWafers = records.length;
 
 
-  /* =====================================
-     10. UPDATE KPI ELEMENTS
-     ===================================== */
-
-  totalWafersElement.textContent =
-    totalWafers.toLocaleString("en-US");
-
-
-  processStagesElement.textContent =
-    processStages.toString();
-
-
-  avgTemperatureElement.textContent =
-    avgTemperature === null
-      ? "N/A"
-      : avgTemperature.toFixed(2) + " °C";
+    // Number of unique process stages in the current dataset
+    const processStages = new Set(
+      records
+        .map(record => record.process_step)
+        .filter(value =>
+          value !== null &&
+          value !== undefined &&
+          value !== ""
+        )
+    ).size;
 
 
-  avgPressureElement.textContent =
-    avgPressure === null
-      ? "N/A"
-      : avgPressure.toFixed(2) + " Torr";
+    // Average temperature
+    const avgTemperature =
+      calculateAverage(records, "temperature_c");
 
 
-  /* =====================================
-     11. CONSOLE INFORMATION
-     ===================================== */
-
-  console.log("KPI Dashboard successfully updated.");
-
-  console.log({
-    totalWafers,
-    processStages,
-    avgTemperature,
-    avgPressure
-  });
-
-}
+    // Average pressure
+    const avgPressure =
+      calculateAverage(records, "pressure_torr");
 
 
-/* =========================================
-   12. RUN DASHBOARD
-   ========================================= */
+    // Update KPI cards
+    totalWafersElement.textContent =
+      totalWafers.toLocaleString("en-US");
 
-// Scripts are loaded at the end of body.
-// Therefore, the HTML elements are available here.
+    processStagesElement.textContent =
+      processStages.toString();
 
-initializeDashboard();
+    avgTemperatureElement.textContent =
+      avgTemperature === null
+        ? "N/A"
+        : avgTemperature.toFixed(2) + " °C";
+
+    avgPressureElement.textContent =
+      avgPressure === null
+        ? "N/A"
+        : avgPressure.toFixed(2) + " Torr";
+
+
+    console.log("KPI Dashboard updated:", {
+      totalWafers,
+      processStages,
+      avgTemperature,
+      avgPressure
+    });
+
+  }
+
+
+  // Make the update function available to other dashboard scripts
+  window.updateDashboard = updateDashboard;
+
+
+  // Update KPIs whenever search or process filters change
+  document.addEventListener(
+    "dashboardDataFiltered",
+    function (event) {
+      updateDashboard(event.detail.records);
+    }
+  );
+
+
+  // Initial dashboard calculation
+  if (Array.isArray(window.data)) {
+    updateDashboard(window.data);
+  } else {
+    console.error("Dataset not found. Check data.js.");
+  }
+
+})();
