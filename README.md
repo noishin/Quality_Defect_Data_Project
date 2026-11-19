@@ -77,10 +77,14 @@ The primary objectives of this project are:
 
 The dashboard provides a centralized interface for monitoring manufac
 turing indicators and exploring process-related information.
+<p align="center">
+  <img src="./assets/dashboard-preview.png"
+       alt="Quality Defect Data Dashboard - Main Interface"
+       width="100%">
+</p>
 
 <p align="center">
-  <img src="assets/dashboard-preview.png" alt="Quality Defect Data Dashboard - Main Interface" width="100%">
-</p>
+  <em>Figure 1. Quality Defect Data Dashboard — Main Interface</em>
 
 *Figure 1. Main dashboard interface displaying key performance indicators in dark mode.*
 
