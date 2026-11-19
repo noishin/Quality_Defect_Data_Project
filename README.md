@@ -416,6 +416,10 @@ These considerations help ensure that the analytical outputs are interpreted app
 
 ---
 
-\<p align="center">   \<strong>From Manufacturing Data to Data-Driven Insights.\</strong> \</p>
+---
 
-\<p align="center">   Quality Defect Data Dashboard\<br>   Developed collaboratively as a university academic project. \</p>
+**From Manufacturing Data to Data-Driven Insights.**
+
+### Quality Defect Data Dashboard
+
+Developed collaboratively as a university academic project.
