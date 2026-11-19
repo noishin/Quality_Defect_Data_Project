@@ -18,7 +18,7 @@ An interactive dashboard for exploring semiconductor manufacturing data, monitor
 
 ## 📸 Dashboard Preview
 
-![Quality Defect Data Dashboard](./assets/dashboard-preview.png)
+![Quality Defect Data Dashboard](./dashboard-preview.png)
 
 *Main interface of the Quality Defect Data Dashboard.*
 
