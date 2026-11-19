@@ -182,4 +182,130 @@ Observations outside these boundaries are flagged as potential statistical anoma
 
 Important interpretation:
 
-A statistical outlier does not necessarily represent a manufacturing defect. Such observations require further investigation and sho
+A statistical outlier does not necessarily represent a manufacturing defect. Such observations require further investigation and should be interpreted within the context of the manufacturing process.
+
+## 7. Dataset
+
+The project uses the Semiconductor Wafer Defect Classification Dataset, available through Kaggle.
+
+The dataset provides the foundation for exploring semiconductor manufacturing records and developing the dashboard's statistical summaries and visual analytics.
+
+### Dataset Information
+
+| Attribute | Description |
+|---|---|
+| Dataset Name | Semiconductor Wafer Defect Classification Dataset |
+| Source | Kaggle |
+| Domain | Semiconductor Manufacturing |
+| Application | Manufacturing Data Analysis |
+| Main Purpose | Process Data Exploration and Quality Monitoring |
+
+Original Dataset:
+
+[View Semiconductor Wafer Defect Classification Dataset on Kaggle](https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data)
+
+All dashboard statistics and visualizations are based on the dataset incorporated into the project.
+
+## 8. Technologies and Tools
+
+The project combines frontend development technologies with data visualization tools.
+
+| Technology | Purpose |
+|---|---|
+| HTML5 | Structuring the dashboard and its components |
+| CSS3 | Interface styling, layout, and visual presentation |
+| JavaScript | Data handling, calculations, and interactive functionality |
+| Chart.js | Creating graphical representations of process data |
+| Git | Version control and tracking code changes |
+| GitHub | Source code hosting and team collaboration |
+| GitHub Pages | Deploying and publishing the live dashboard |
+| Kaggle | Providing the original dataset |
+
+### Development Approach
+
+The dashboard follows a browser-based implementation approach.
+
+The dataset is incorporated into the project, processed through JavaScript, and presented through interactive visual components and statistical summaries.
+
+Chart.js is used to support graphical representation of manufacturing data.
+
+## 9. Project Structure
+
+The repository contains the main application files, dataset, styling resources, and supporting JavaScript modules.
+
+Quality_Defect_Data_Project/
+│
+├── index.html
+│
+├── data.js
+│
+├── ai_studio_code(1).js
+│
+├── ai_studio_code (3) (1).js
+│
+├── ai_studio_code (1).css
+│
+├── assets/
+│   └── dashboard-preview.png
+│
+└── README.md
+The `assets directory contains the dashboard preview image used in this documentation.
+
+## 10. Access and Installation
+
+### 10.1. Online Access
+
+The dashboard is publicly accessible through GitHub Pages.
+
+**Live Application:**
+
+[https://noishin.github.io/Quality_Defect_Data_Project/](https://noishin.github.io/Quality_Defect_Data_Project/)
+
+No additional installation is required to explore the deployed dashboard.
+
+### 10.2. Run Locally
+
+To access the source code:
+
+**Step 1 — Clone the repository**
+
+``bash
+git clone https://github.com/noishin/Quality_Defect_Data_Project.git
+
+**Step 2 — Navigate to the project directory**
+
+bash
+cd Quality_Defect_Data_Project
+`
+
+Step 3 — Open the project
+
+Open `index.html` in a modern web browser.
+
+If external libraries are loaded through a CDN, an active internet connection is required.
+
+Make sure the file references in `index.html` match the actual filenames in the repository.
+
+---
+
+## 11. Team Members
+
+This project was developed collaboratively by a team of four members as part of a university IT course.
+
+| No. | Team Member | GitHub Profile |
+|---|---|---|
+| 01 | Noushin Alighardashi | [@noishin](https://github.com/noishin) |
+| 02 | Arefeh Hosseini | [@Arefehoseini](https://github.com/Arefehoseini) |
+| 03 | Madieh Masoumi | [@mahdieh13851106-cell](https://github.com/mahdieh13851106-cell) |
+| 04 | Maryam Bigdeli | [@bigdeli-maryam](https://github.com/bigdeli-maryam) |
+
+## 12. Roles and Responsibilities
+
+The project was developed through four complementary areas of responsibility, covering project coordination, interface design, data management, frontend development, visualization, and technical documentation.
+
+### 1. Noushin Alighardashi
+
+Project Lead & UI/UX Designer
+
+- Coordinating the team and organizing the development process.
+- Supervising
