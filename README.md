@@ -2,29 +2,19 @@
 
 ### An Interactive Dashboard for Semiconductor Wafer Quality and Process Analysis
 
-\<p align="center">
-&#x20; \<strong>From Manufacturing Data to Data-Driven Insights\</strong>
-\</p>
+**From Manufacturing Data to Data-Driven Insights**
 
-\<p align="center">
-&#x20; \<a href="[https://noishin.github.io/Quality_Defect_Data_Project/](https://noishin.github.io/Quality_Defect_Data_Project/)">
-&#x20;   \<img src="[https://img.shields.io/badge/LIVE%20DEMO-Explore%20Dashboard-00b894?style=for-the-badge&logo=googlechrome&logoColor=white](https://img.shields.io/badge/LIVE%20DEMO-Explore%20Dashboard-00b894?style=for-the-badge\&logo=googlechrome\&logoColor=white)" alt="Live Demo">
-&#x20; \</a>
-&#x20; \<a href="[https://github.com/noishin/Quality_Defect_Data_Project](https://github.com/noishin/Quality_Defect_Data_Project)">
-&#x20;   \<img src="[https://img.shields.io/badge/GITHUB-Source%20Code-181717?style=for-the-badge&logo=github](https://img.shields.io/badge/GITHUB-Source%20Code-181717?style=for-the-badge\&logo=github)" alt="GitHub Repository">
-&#x20; \</a>
-&#x20; \<a href="[https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data](https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data)">
-&#x20;   \<img src="[https://img.shields.io/badge/DATASET-Kaggle-20BEFF?style=for-the-badge&logo=kaggle](https://img.shields.io/badge/DATASET-Kaggle-20BEFF?style=for-the-badge\&logo=kaggle)" alt="Kaggle Dataset">
-&#x20; \</a>
-\</p>
+[![Live Demo](https://img.shields.io/badge/LIVE%20DEMO-Explore%20Dashboard-00b894?style=for-the-badge&logo=googlechrome&logoColor=white)](https://noishin.github.io/Quality_Defect_Data_Project/)
 
-\<p align="center">
-&#x20; \<img src="[https://img.shields.io/badge/HTML5-Frontend-orange?logo=html5](https://img.shields.io/badge/HTML5-Frontend-orange?logo=html5)" alt="HTML5">
-&#x20; \<img src="[https://img.shields.io/badge/CSS3-Styling-blue?logo=css3](https://img.shields.io/badge/CSS3-Styling-blue?logo=css3)" alt="CSS3">
-&#x20; \<img src="[https://img.shields.io/badge/JavaScript-Interactive-yellow?logo=javascript](https://img.shields.io/badge/JavaScript-Interactive-yellow?logo=javascript)" alt="JavaScript">
-&#x20; \<img src="[https://img.shields.io/badge/Chart.js-Visualization-ff6384?logo=chartdotjs](https://img.shields.io/badge/Chart.js-Visualization-ff6384?logo=chartdotjs)" alt="Chart.js">
-&#x20; \<img src="[https://img.shields.io/badge/Team-4%20Members-blueviolet](https://img.shields.io/badge/Team-4%20Members-blueviolet)" alt="Team">
-\</p>
+[![GitHub](https://img.shields.io/badge/GITHUB-Source%20Code-181717?style=for-the-badge&logo=github)](https://github.com/noishin/Quality_Defect_Data_Project)
+
+[![Kaggle](https://img.shields.io/badge/DATASET-Kaggle-20BEFF?style=for-the-badge&logo=kaggle)](https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data)
+
+![HTML5](https://img.shields.io/badge/HTML5-Frontend-orange?logo=html5)
+![CSS3](https://img.shields.io/badge/CSS3-Styling-blue?logo=css3)
+![JavaScript](https://img.shields.io/badge/JavaScript-Interactive-yellow?logo=javascript)
+![Chart.js](https://img.shields.io/badge/Chart.js-Visualization-ff6384?logo=chartdotjs)
+![Team](https://img.shields.io/badge/Team-4%20Members-blueviolet)
 
 ---
 
