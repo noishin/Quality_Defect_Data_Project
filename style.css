@@ -1588,3 +1588,29 @@ body[data-theme="light"] .kpi-card-enhanced h2 {
     height: 240px;
   }
 }
+/* Process Stage Theme Support */
+#processInsightsPanel {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border);
+}
+
+#processInsightsPanel h2,
+#processInsightsPanel h3,
+#processInsightsPanel p,
+#processInsightsPanel td,
+#processInsightsPanel th {
+  color: var(--text) !important;
+}
+
+#processInsightsPanel th {
+  border-bottom-color: var(--border) !important;
+}
+
+#processInsightsPanel td {
+  border-bottom-color: var(--border) !important;
+}
+
+#processInsightsPanel > div {
+  background: var(--surface-soft) !important;
+}
