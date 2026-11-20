@@ -1614,3 +1614,30 @@ body[data-theme="light"] .kpi-card-enhanced h2 {
 #processInsightsPanel > div {
   background: var(--surface-soft) !important;
 }
+/* Quality Risk Detection - Dark and Light Theme */
+
+#qualityRiskPanel {
+  background: var(--surface, #ffffff) !important;
+  color: var(--text, #243247) !important;
+  border: 1px solid var(--border, #e5eaf0);
+}
+
+#qualityRiskPanel h2,
+#qualityRiskPanel h3,
+#qualityRiskPanel p,
+#qualityRiskPanel th,
+#qualityRiskPanel td {
+  color: var(--text, #243247);
+}
+
+#qualityRiskPanel #riskSummary,
+#qualityRiskPanel table,
+#qualityRiskPanel thead,
+#qualityRiskPanel tbody {
+  color: var(--text, #243247);
+}
+
+#qualityRiskPanel th,
+#qualityRiskPanel td {
+  border-color: var(--border, #e5eaf0) !important;
+}
