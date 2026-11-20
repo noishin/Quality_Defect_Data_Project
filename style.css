@@ -1641,3 +1641,20 @@ body[data-theme="light"] .kpi-card-enhanced h2 {
 #qualityRiskPanel td {
   border-color: var(--border, #e5eaf0) !important;
 }
+#qualityRiskPanel > div {
+  background: var(--surface-soft, #f8fafc) !important;
+  color: var(--text, #243247) !important;
+}
+
+#qualityRiskPanel > div h3,
+#qualityRiskPanel > div p {
+  color: var(--text, #243247) !important;
+}
+
+#qualityRiskPanel table {
+  background: var(--surface, #ffffff) !important;
+}
+
+#qualityRiskPanel button {
+  color: #ffffff !important;
+}
