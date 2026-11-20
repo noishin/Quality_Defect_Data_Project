@@ -1923,3 +1923,46 @@ body[data-theme="light"] .kpi-card-enhanced h2 {
         min-height: 125px;
     }
 }
+
+/* Balanced analytics layout */
+
+.analytics-section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+.analytics-heading {
+    grid-column: 1 / -1;
+}
+
+.analytics-grid {
+    display: contents;
+}
+
+.analytics-section .chart-panel {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.analytics-section .chart-panel-wide {
+    grid-column: auto;
+}
+
+.analytics-section .chart-container {
+    width: 100%;
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+    .analytics-section {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-heading {
+        grid-column: auto;
+    }
+}
