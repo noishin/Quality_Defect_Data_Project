@@ -365,11 +365,8 @@
   <script src="./theme.js"></script>
 
   <!-- Quality Analysis Module -->
-  <script src="./quality-analysis.js"></script>
-  
-<section class="gallery-section">
-  
-
+ <!-- Quality Analysis Module -->
+<script src="./quality-analysis.js"></script>
 
 <script>
 let currentSlide = 0;
@@ -378,6 +375,8 @@ let slideTimer;
 function showSlide(index) {
   const slides = document.querySelectorAll('.slide');
   const dots = document.querySelectorAll('.slide-dots button');
+
+  if (slides.length === 0) return;
 
   currentSlide = (index + slides.length) % slides.length;
 
@@ -399,9 +398,6 @@ function changeSlide(direction) {
 
 showSlide(0);
 </script>
-</body>
-
-
 
 </body>
 </html>
