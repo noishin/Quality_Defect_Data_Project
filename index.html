@@ -46,6 +46,39 @@
 
     <!-- Dashboard Header -->
     <header>
+      <section class="slideshow-section">
+  <div class="slideshow">
+    <div class="slide active">
+      <img src="./wafer-in-cleanroom.jpg" alt="Silicon Wafer">
+      <div class="slide-caption">Silicon Wafer Technology</div>
+    </div>
+
+    <div class="slide">
+      <img src="./microchip-wafer-detail.jpg" alt="Microchip">
+      <div class="slide-caption">Advanced Microchip Technology</div>
+    </div>
+
+    <div class="slide">
+      <img src="./automated-wafer-factory.jpg" alt="Wafer Factory">
+      <div class="slide-caption">Automated Manufacturing</div>
+    </div>
+
+    <div class="slide">
+      <img src="./engineer-inspecting-wafer.jpg" alt="Quality Inspection">
+      <div class="slide-caption">Semiconductor Quality Inspection</div>
+    </div>
+
+    <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
+    <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
+
+    <div class="slide-dots">
+      <button onclick="showSlide(0)"></button>
+      <button onclick="showSlide(1)"></button>
+      <button onclick="showSlide(2)"></button>
+      <button onclick="showSlide(3)"></button>
+    </div>
+  </div>
+</section>
       <h1>Quality Defect Data Dashboard</h1>
       <p>
         University IT Course — Semiconductor Wafer Quality Analysis
@@ -336,41 +369,7 @@
   
 <section class="gallery-section">
   
-<section class="slideshow-section">
-  <div class="slideshow">
 
-    <div class="slide active">
-      <img src="./wafer-in-cleanroom.jpg" alt="Silicon Wafer">
-      <div class="slide-caption">Silicon Wafer Technology</div>
-    </div>
-
-    <div class="slide">
-      <img src="./microchip-wafer-detail.jpg" alt="Microchip">
-      <div class="slide-caption">Advanced Microchip Technology</div>
-    </div>
-
-    <div class="slide">
-      <img src="./automated-wafer-factory.jpg" alt="Wafer Factory">
-      <div class="slide-caption">Automated Manufacturing</div>
-    </div>
-
-    <div class="slide">
-      <img src="./engineer-inspecting-wafer.jpg" alt="Quality Inspection">
-      <div class="slide-caption">Semiconductor Quality Inspection</div>
-    </div>
-
-    <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
-    <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
-
-    <div class="slide-dots">
-      <button onclick="showSlide(0)"></button>
-      <button onclick="showSlide(1)"></button>
-      <button onclick="showSlide(2)"></button>
-      <button onclick="showSlide(3)"></button>
-    </div>
-
-  </div>
-</section>
 
 <script>
 let currentSlide = 0;
