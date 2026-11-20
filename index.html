@@ -335,31 +335,43 @@
   <script src="./quality-analysis.js"></script>
   
 <section class="gallery-section">
-  <h2>Semiconductor Gallery</h2>
-  <p>Explore our semiconductor manufacturing and wafer technology</p>
+  
+<section class="slideshow-section">
+  <div class="slideshow">
 
-  <div class="gallery-grid">
-    <div class="gallery-card">
-      <img src="./wafer-in-cleanroom.jpg" alt="Silicon wafer in cleanroom">
-      <h3>Silicon Wafer</h3>
+    <div class="slide active">
+      <img src="./wafer-in-cleanroom.jpg" alt="Silicon Wafer">
+      <div class="slide-caption">Silicon Wafer Technology</div>
     </div>
 
-    <div class="gallery-card">
-      <img src="./microchip-wafer-detail.jpg" alt="Microchip wafer detail">
-      <h3>Microchip Technology</h3>
+    <div class="slide">
+      <img src="./microchip-wafer-detail.jpg" alt="Microchip">
+      <div class="slide-caption">Advanced Microchip Technology</div>
     </div>
 
-    <div class="gallery-card">
-      <img src="./automated-wafer-factory.jpg" alt="Automated wafer factory">
-      <h3>Automated Manufacturing</h3>
+    <div class="slide">
+      <img src="./automated-wafer-factory.jpg" alt="Wafer Factory">
+      <div class="slide-caption">Automated Manufacturing</div>
     </div>
 
-    <div class="gallery-card">
-      <img src="./engineer-inspecting-wafer.jpg" alt="Engineer inspecting wafer">
-      <h3>Quality Inspection</h3>
+    <div class="slide">
+      <img src="./engineer-inspecting-wafer.jpg" alt="Quality Inspection">
+      <div class="slide-caption">Semiconductor Quality Inspection</div>
     </div>
+
+    <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
+    <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
+
+    <div class="slide-dots">
+      <button onclick="showSlide(0)"></button>
+      <button onclick="showSlide(1)"></button>
+      <button onclick="showSlide(2)"></button>
+      <button onclick="showSlide(3)"></button>
+    </div>
+
   </div>
 </section>
+
 
 
 </body>
