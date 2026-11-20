@@ -1823,3 +1823,32 @@ body[data-theme="light"] .kpi-card-enhanced h2 {
 #tableContainer {
     scroll-behavior: smooth;
 }
+
+/* Compact records table */
+#tableContainer {
+    max-height: 480px;
+    overflow: auto;
+    border-radius: 12px;
+    scrollbar-width: thin;
+    scrollbar-color: #35c6d5 #14243a;
+}
+
+/* Sticky table header */
+#tableContainer thead th {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #142b43;
+}
+
+/* Cleaner table layout */
+#tableContainer table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tableContainer th,
+#tableContainer td {
+    padding: 9px 12px;
+    white-space: nowrap;
+}
