@@ -52,37 +52,68 @@
         University IT Course — Semiconductor Wafer Quality Analysis
       </p>
     </header>
-    <section class="slideshow-section">
-  <div class="slideshow">
-    <div class="slide active">
-      <img src="./wafer-in-cleanroom.jpg" alt="Silicon Wafer">
-      <div class="slide-caption">Silicon Wafer Technology</div>
+  
+<section class="slideshow-section">
+  <div class="hero-slider">
+
+    <div class="hero-slide active">
+      <img src="./wafer-in-cleanroom.jpg" alt="Silicon wafer in a semiconductor cleanroom">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-tag">◈ Advanced Semiconductor Analytics</span>
+        <h2>Semiconductor<br><span>Wafer Technology</span></h2>
+        <p>Exploring precision, innovation and quality<br>in modern semiconductor manufacturing.</p>
+        <a href="#analytics-section" class="hero-cta">Explore Analysis <span>›</span></a>
+      </div>
     </div>
 
-    <div class="slide">
-      <img src="./microchip-wafer-detail.jpg" alt="Microchip">
-      <div class="slide-caption">Advanced Microchip Technology</div>
+    <div class="hero-slide">
+      <img src="./microchip-wafer-detail.jpg" alt="Advanced microchip wafer">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-tag">◈ Next-Generation Technology</span>
+        <h2>Advanced<br><span>Microchip Design</span></h2>
+        <p>Discover the technology behind<br>high-performance semiconductor devices.</p>
+        <a href="#analytics-section" class="hero-cta">Explore Analysis <span>›</span></a>
+      </div>
     </div>
 
-    <div class="slide">
-      <img src="./automated-wafer-factory.jpg" alt="Wafer Factory">
-      <div class="slide-caption">Automated Manufacturing</div>
+    <div class="hero-slide">
+      <img src="./automated-wafer-factory.jpg" alt="Automated semiconductor manufacturing">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-tag">◈ Smart Manufacturing</span>
+        <h2>Automated<br><span>Wafer Production</span></h2>
+        <p>Connecting manufacturing automation<br>with reliable production performance.</p>
+        <a href="#analytics-section" class="hero-cta">Explore Analysis <span>›</span></a>
+      </div>
     </div>
 
-    <div class="slide">
-      <img src="./engineer-inspecting-wafer.jpg" alt="Quality Inspection">
-      <div class="slide-caption">Semiconductor Quality Inspection</div>
+    <div class="hero-slide">
+      <img src="./engineer-inspecting-wafer.jpg" alt="Engineer inspecting semiconductor wafer quality">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-tag">◈ Quality Assurance</span>
+        <h2>Semiconductor<br><span>Quality Inspection</span></h2>
+        <p>Ensuring higher quality, greater reliability<br>and smarter manufacturing decisions.</p>
+        <a href="#analytics-section" class="hero-cta">Explore Analysis <span>›</span></a>
+      </div>
     </div>
 
-    <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
-    <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
+    <button class="hero-arrow hero-prev" onclick="changeHeroSlide(-1)" aria-label="Previous slide">‹</button>
+    <button class="hero-arrow hero-next" onclick="changeHeroSlide(1)" aria-label="Next slide">›</button>
 
-    <div class="slide-dots">
-      <button onclick="showSlide(0)"></button>
-      <button onclick="showSlide(1)"></button>
-      <button onclick="showSlide(2)"></button>
-      <button onclick="showSlide(3)"></button>
+    <div class="hero-dots">
+      <button class="active" onclick="showHeroSlide(0)" aria-label="Slide 1"></button>
+      <button onclick="showHeroSlide(1)" aria-label="Slide 2"></button>
+      <button onclick="showHeroSlide(2)" aria-label="Slide 3"></button>
+      <button onclick="showHeroSlide(3)" aria-label="Slide 4"></button>
     </div>
+
+    <div class="hero-counter">
+      <span id="heroCurrent">01</span> / 04
+    </div>
+
   </div>
 </section>
 
