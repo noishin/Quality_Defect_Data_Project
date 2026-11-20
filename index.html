@@ -43,230 +43,344 @@
       </button>
     </div>
 
-
     <!-- Dashboard Header -->
     <header>
-     
       <h1>Quality Defect Data Dashboard</h1>
       <p>
         University IT Course — Semiconductor Wafer Quality Analysis
       </p>
     </header>
-  
-<section class="slideshow-section">
-  <div class="hero-slider">
 
-    <div class="hero-slide active">
-      <img src="./wafer-in-cleanroom.jpg" alt="Silicon wafer in a semiconductor cleanroom">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <span class="hero-tag">◈ Advanced Semiconductor Analytics</span>
-        <h2>Semiconductor<br><span>Wafer Technology</span></h2>
-        <p>Exploring precision, innovation and quality<br>in modern semiconductor manufacturing.</p>
-        <a href="#analytics-section" class="hero-cta">Explore Analysis <span>›</span></a>
+    <!-- Premium Semiconductor Hero Slider -->
+    <section class="slideshow-section">
+      <div class="hero-slider">
+
+        <!-- Slide 1 -->
+        <div class="hero-slide active">
+          <img
+            src="./wafer-in-cleanroom.jpg"
+            alt="Silicon wafer in a semiconductor cleanroom"
+          />
+
+          <div class="hero-overlay"></div>
+
+          <div class="hero-content">
+            <span class="hero-tag">
+              ◈ Advanced Semiconductor Analytics
+            </span>
+
+            <h2>
+              Semiconductor<br />
+              <span>Wafer Technology</span>
+            </h2>
+
+            <p>
+              Exploring precision, innovation and quality<br />
+              in modern semiconductor manufacturing.
+            </p>
+
+            <a href="#analytics-section" class="hero-cta">
+              Explore Analysis <span>›</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+          <img
+            src="./microchip-wafer-detail.jpg"
+            alt="Advanced microchip wafer"
+          />
+
+          <div class="hero-overlay"></div>
+
+          <div class="hero-content">
+            <span class="hero-tag">
+              ◈ Next-Generation Technology
+            </span>
+
+            <h2>
+              Advanced<br />
+              <span>Microchip Design</span>
+            </h2>
+
+            <p>
+              Discover the technology behind<br />
+              high-performance semiconductor devices.
+            </p>
+
+            <a href="#analytics-section" class="hero-cta">
+              Explore Analysis <span>›</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+          <img
+            src="./automated-wafer-factory.jpg"
+            alt="Automated semiconductor manufacturing"
+          />
+
+          <div class="hero-overlay"></div>
+
+          <div class="hero-content">
+            <span class="hero-tag">
+              ◈ Smart Manufacturing
+            </span>
+
+            <h2>
+              Automated<br />
+              <span>Wafer Production</span>
+            </h2>
+
+            <p>
+              Connecting manufacturing automation<br />
+              with reliable production performance.
+            </p>
+
+            <a href="#analytics-section" class="hero-cta">
+              Explore Analysis <span>›</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="hero-slide">
+          <img
+            src="./engineer-inspecting-wafer.jpg"
+            alt="Engineer inspecting semiconductor wafer quality"
+          />
+
+          <div class="hero-overlay"></div>
+
+          <div class="hero-content">
+            <span class="hero-tag">
+              ◈ Quality Assurance
+            </span>
+
+            <h2>
+              Semiconductor<br />
+              <span>Quality Inspection</span>
+            </h2>
+
+            <p>
+              Ensuring higher quality, greater reliability<br />
+              and smarter manufacturing decisions.
+            </p>
+
+            <a href="#analytics-section" class="hero-cta">
+              Explore Analysis <span>›</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button
+          class="hero-arrow hero-prev"
+          onclick="changeHeroSlide(-1)"
+          aria-label="Previous slide"
+          type="button"
+        >
+          ‹
+        </button>
+
+        <button
+          class="hero-arrow hero-next"
+          onclick="changeHeroSlide(1)"
+          aria-label="Next slide"
+          type="button"
+        >
+          ›
+        </button>
+
+        <!-- Slide Indicators -->
+        <div class="hero-dots">
+          <button
+            class="active"
+            onclick="showHeroSlide(0)"
+            aria-label="Slide 1"
+            type="button"
+          ></button>
+
+          <button
+            onclick="showHeroSlide(1)"
+            aria-label="Slide 2"
+            type="button"
+          ></button>
+
+          <button
+            onclick="showHeroSlide(2)"
+            aria-label="Slide 3"
+            type="button"
+          ></button>
+
+          <button
+            onclick="showHeroSlide(3)"
+            aria-label="Slide 4"
+            type="button"
+          ></button>
+        </div>
+
+        <!-- Slide Counter -->
+        <div class="hero-counter">
+          <span id="heroCurrent">01</span> / 04
+        </div>
+
       </div>
-    </div>
+    </section>
 
-    <div class="hero-slide">
-      <img src="./microchip-wafer-detail.jpg" alt="Advanced microchip wafer">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <span class="hero-tag">◈ Next-Generation Technology</span>
-        <h2>Advanced<br><span>Microchip Design</span></h2>
-        <p>Discover the technology behind<br>high-performance semiconductor devices.</p>
-        <a href="#analytics-section" class="hero-cta">Explore Analysis <span>›</span></a>
+    <!-- Advanced KPI Statistics Section -->
+    <section class="kpi-grid dashboard-kpi-grid">
+
+      <!-- Total Wafers -->
+      <div class="kpi-card kpi-card-enhanced">
+        <div class="kpi-top">
+          <div class="kpi-icon">◈</div>
+          <span class="kpi-status">LIVE DATA</span>
+        </div>
+        <span class="kpi-label">Total Wafers</span>
+        <h2 id="totalWafers">Loading...</h2>
+        <span class="kpi-description">Total production records</span>
       </div>
-    </div>
 
-    <div class="hero-slide">
-      <img src="./automated-wafer-factory.jpg" alt="Automated semiconductor manufacturing">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <span class="hero-tag">◈ Smart Manufacturing</span>
-        <h2>Automated<br><span>Wafer Production</span></h2>
-        <p>Connecting manufacturing automation<br>with reliable production performance.</p>
-        <a href="#analytics-section" class="hero-cta">Explore Analysis <span>›</span></a>
+      <!-- Process Stages -->
+      <div class="kpi-card kpi-card-enhanced">
+        <div class="kpi-top">
+          <div class="kpi-icon">⚙</div>
+          <span class="kpi-status">PROCESS</span>
+        </div>
+        <span class="kpi-label">Process Stages</span>
+        <h2 id="processStages">Loading...</h2>
+        <span class="kpi-description">Unique manufacturing stages</span>
       </div>
-    </div>
 
-    <div class="hero-slide">
-      <img src="./engineer-inspecting-wafer.jpg" alt="Engineer inspecting semiconductor wafer quality">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <span class="hero-tag">◈ Quality Assurance</span>
-        <h2>Semiconductor<br><span>Quality Inspection</span></h2>
-        <p>Ensuring higher quality, greater reliability<br>and smarter manufacturing decisions.</p>
-        <a href="#analytics-section" class="hero-cta">Explore Analysis <span>›</span></a>
+      <!-- Average Temperature -->
+      <div class="kpi-card kpi-card-enhanced">
+        <div class="kpi-top">
+          <div class="kpi-icon">🌡</div>
+          <span class="kpi-status">THERMAL</span>
+        </div>
+        <span class="kpi-label">Average Temperature</span>
+        <h2 id="avgTemperature">Loading...</h2>
+        <span class="kpi-description">Average process temperature</span>
       </div>
-    </div>
 
-    <button class="hero-arrow hero-prev" onclick="changeHeroSlide(-1)" aria-label="Previous slide">‹</button>
-    <button class="hero-arrow hero-next" onclick="changeHeroSlide(1)" aria-label="Next slide">›</button>
+      <!-- Average Pressure -->
+      <div class="kpi-card kpi-card-enhanced">
+        <div class="kpi-top">
+          <div class="kpi-icon">◉</div>
+          <span class="kpi-status">PRESSURE</span>
+        </div>
+        <span class="kpi-label">Average Pressure</span>
+        <h2 id="avgPressure">Loading...</h2>
+        <span class="kpi-description">Average chamber pressure</span>
+      </div>
 
-    <div class="hero-dots">
-      <button class="active" onclick="showHeroSlide(0)" aria-label="Slide 1"></button>
-      <button onclick="showHeroSlide(1)" aria-label="Slide 2"></button>
-      <button onclick="showHeroSlide(2)" aria-label="Slide 3"></button>
-      <button onclick="showHeroSlide(3)" aria-label="Slide 4"></button>
-    </div>
+      <!-- Average Etch Rate -->
+      <div class="kpi-card kpi-card-enhanced">
+        <div class="kpi-top">
+          <div class="kpi-icon">↗</div>
+          <span class="kpi-status">ETCHING</span>
+        </div>
+        <span class="kpi-label">Average Etch Rate</span>
+        <h2 id="avgEtchRate">Loading...</h2>
+        <span class="kpi-description">Average etch rate (nm/min)</span>
+      </div>
 
-    <div class="hero-counter">
-      <span id="heroCurrent">01</span> / 04
-    </div>
+      <!-- Data Completeness -->
+      <div class="kpi-card kpi-card-enhanced">
+        <div class="kpi-top">
+          <div class="kpi-icon">▤</div>
+          <span class="kpi-status">DATA QUALITY</span>
+        </div>
+        <span class="kpi-label">Data Completeness</span>
+        <h2 id="dataCompleteness">Loading...</h2>
+        <span class="kpi-description">Valid numeric parameter values</span>
+      </div>
 
-  </div>
-</section>
-
-   
-<!-- Advanced KPI Statistics Section -->
-<section class="kpi-grid dashboard-kpi-grid">
-
-  <!-- Total Wafers -->
-  <div class="kpi-card kpi-card-enhanced">
-    <div class="kpi-top">
-      <div class="kpi-icon">◈</div>
-      <span class="kpi-status">LIVE DATA</span>
-    </div>
-    <span class="kpi-label">Total Wafers</span>
-    <h2 id="totalWafers">Loading...</h2>
-    <span class="kpi-description">Total production records</span>
-  </div>
-
-  <!-- Process Stages -->
-  <div class="kpi-card kpi-card-enhanced">
-    <div class="kpi-top">
-      <div class="kpi-icon">⚙</div>
-      <span class="kpi-status">PROCESS</span>
-    </div>
-    <span class="kpi-label">Process Stages</span>
-    <h2 id="processStages">Loading...</h2>
-    <span class="kpi-description">Unique manufacturing stages</span>
-  </div>
-
-  <!-- Average Temperature -->
-  <div class="kpi-card kpi-card-enhanced">
-    <div class="kpi-top">
-      <div class="kpi-icon">🌡</div>
-      <span class="kpi-status">THERMAL</span>
-    </div>
-    <span class="kpi-label">Average Temperature</span>
-    <h2 id="avgTemperature">Loading...</h2>
-    <span class="kpi-description">Average process temperature</span>
-  </div>
-
-  <!-- Average Pressure -->
-  <div class="kpi-card kpi-card-enhanced">
-    <div class="kpi-top">
-      <div class="kpi-icon">◉</div>
-      <span class="kpi-status">PRESSURE</span>
-    </div>
-    <span class="kpi-label">Average Pressure</span>
-    <h2 id="avgPressure">Loading...</h2>
-    <span class="kpi-description">Average chamber pressure</span>
-  </div>
-
-  <!-- Average Etch Rate -->
-  <div class="kpi-card kpi-card-enhanced">
-    <div class="kpi-top">
-      <div class="kpi-icon">↗</div>
-      <span class="kpi-status">ETCHING</span>
-    </div>
-    <span class="kpi-label">Average Etch Rate</span>
-    <h2 id="avgEtchRate">Loading...</h2>
-    <span class="kpi-description">Average etch rate (nm/min)</span>
-  </div>
-
-  <!-- Data Completeness -->
-  <div class="kpi-card kpi-card-enhanced">
-    <div class="kpi-top">
-      <div class="kpi-icon">▤</div>
-      <span class="kpi-status">DATA QUALITY</span>
-    </div>
-    <span class="kpi-label">Data Completeness</span>
-    <h2 id="dataCompleteness">Loading...</h2>
-    <span class="kpi-description">Valid numeric parameter values</span>
-  </div>
-
-</section>
+    </section>
 
     <!-- Futuristic Analytics Charts -->
-<section class="analytics-section">
+    <section class="analytics-section" id="analytics-section">
 
-  <div class="analytics-heading">
-    <h2>AI Process Analytics</h2>
-    <p>Advanced statistical visualization of semiconductor wafer data</p>
-  </div>
-
-  <!-- Chart 1: Process Distribution -->
-  <div class="card chart-panel">
-    <h2 class="card-title">Process Distribution</h2>
-    <p class="chart-description">
-      Number of wafers recorded in each manufacturing stage.
-    </p>
-    <div class="chart-container">
-      <canvas id="processChart"></canvas>
-    </div>
-  </div>
-
-  <div class="analytics-grid">
-
-    <!-- Chart 2: Parameter Variation -->
-    <div class="card chart-panel">
-      <h2 class="card-title">Parameter Variation</h2>
-      <p class="chart-description">
-        Variation of a selected parameter across wafer records.
-      </p>
-
-      <select id="trendParameter" class="search-input chart-select">
-        <option value="temperature_c">Temperature (°C)</option>
-        <option value="pressure_torr">Pressure (Torr)</option>
-        <option value="gas_flow_sccm">Gas Flow (sccm)</option>
-        <option value="etch_rate_nm_min">Etch Rate (nm/min)</option>
-        <option value="voltage_v">Voltage (V)</option>
-        <option value="current_ma">Current (mA)</option>
-      </select>
-
-      <div class="chart-container">
-        <canvas id="parameterTrendChart"></canvas>
+      <div class="analytics-heading">
+        <h2>AI Process Analytics</h2>
+        <p>
+          Advanced statistical visualization of semiconductor wafer data
+        </p>
       </div>
-    </div>
 
-    <!-- Chart 3: Parameter Correlation -->
-    <div class="card chart-panel">
-      <h2 class="card-title">Parameter Correlation</h2>
-      <p class="chart-description">
-        Relationship between temperature and etch rate.
-      </p>
+      <!-- Chart 1: Process Distribution -->
+      <div class="card chart-panel">
+        <h2 class="card-title">Process Distribution</h2>
+        <p class="chart-description">
+          Number of wafers recorded in each manufacturing stage.
+        </p>
 
-      <div class="chart-container">
-        <canvas id="correlationChart"></canvas>
+        <div class="chart-container">
+          <canvas id="processChart"></canvas>
+        </div>
       </div>
-    </div>
 
-    <!-- Chart 4: Process Stage Comparison -->
-    <div class="card chart-panel chart-panel-wide">
-      <h2 class="card-title">Process Stage Comparison</h2>
-      <p class="chart-description">
-        Comparison of the average selected parameter across process stages.
-      </p>
+      <div class="analytics-grid">
 
-      <select id="comparisonParameter" class="search-input chart-select">
-        <option value="temperature_c">Temperature (°C)</option>
-        <option value="pressure_torr">Pressure (Torr)</option>
-        <option value="gas_flow_sccm">Gas Flow (sccm)</option>
-        <option value="etch_rate_nm_min">Etch Rate (nm/min)</option>
-        <option value="voltage_v">Voltage (V)</option>
-        <option value="current_ma">Current (mA)</option>
-      </select>
+        <!-- Chart 2: Parameter Variation -->
+        <div class="card chart-panel">
+          <h2 class="card-title">Parameter Variation</h2>
+          <p class="chart-description">
+            Variation of a selected parameter across wafer records.
+          </p>
 
-      <div class="chart-container">
-        <canvas id="comparisonChart"></canvas>
+          <select id="trendParameter" class="search-input chart-select">
+            <option value="temperature_c">Temperature (°C)</option>
+            <option value="pressure_torr">Pressure (Torr)</option>
+            <option value="gas_flow_sccm">Gas Flow (sccm)</option>
+            <option value="etch_rate_nm_min">Etch Rate (nm/min)</option>
+            <option value="voltage_v">Voltage (V)</option>
+            <option value="current_ma">Current (mA)</option>
+          </select>
+
+          <div class="chart-container">
+            <canvas id="parameterTrendChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 3: Parameter Correlation -->
+        <div class="card chart-panel">
+          <h2 class="card-title">Parameter Correlation</h2>
+          <p class="chart-description">
+            Relationship between temperature and etch rate.
+          </p>
+
+          <div class="chart-container">
+            <canvas id="correlationChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 4: Process Stage Comparison -->
+        <div class="card chart-panel chart-panel-wide">
+          <h2 class="card-title">Process Stage Comparison</h2>
+          <p class="chart-description">
+            Comparison of the average selected parameter across process stages.
+          </p>
+
+          <select id="comparisonParameter" class="search-input chart-select">
+            <option value="temperature_c">Temperature (°C)</option>
+            <option value="pressure_torr">Pressure (Torr)</option>
+            <option value="gas_flow_sccm">Gas Flow (sccm)</option>
+            <option value="etch_rate_nm_min">Etch Rate (nm/min)</option>
+            <option value="voltage_v">Voltage (V)</option>
+            <option value="current_ma">Current (mA)</option>
+          </select>
+
+          <div class="chart-container">
+            <canvas id="comparisonChart"></canvas>
+          </div>
+        </div>
+
       </div>
-    </div>
-
-  </div>
-</section>
-
+    </section>
 
     <!-- Process Quality Monitoring Section -->
     <section class="card quality-section">
@@ -280,7 +394,6 @@
         Outliers are flagged for further investigation and do not
         necessarily indicate defective wafers.
       </p>
-
 
       <!-- Quality Summary Cards -->
       <div class="kpi-grid quality-kpi-grid">
@@ -305,7 +418,6 @@
 
       </div>
 
-
       <!-- Anomaly Summary Table -->
       <h3 class="quality-subtitle">
         Anomalies by Parameter
@@ -315,20 +427,16 @@
 
     </section>
 
-
     <!-- Data Table Section -->
     <section class="card">
 
       <div class="card-title">
-
         <h2>Wafer Quality Records</h2>
 
         <span class="results-count" id="recordCount">
           Loading records...
         </span>
-
       </div>
-
 
       <!-- Search and Filter Controls -->
       <div class="search-controls">
@@ -350,7 +458,6 @@
 
         </div>
 
-
         <!-- Process Step Filter -->
         <select
           id="processFilter"
@@ -367,14 +474,12 @@
 
       </div>
 
-
       <!-- Table Container -->
       <div id="tableContainer"></div>
 
     </section>
 
   </div>
-
 
   <!-- JavaScript Libraries and Project Files -->
 
@@ -396,42 +501,50 @@
   <script src="./theme.js"></script>
 
   <!-- Quality Analysis Module -->
- <!-- Quality Analysis Module -->
-<script src="./quality-analysis.js"></script>
-<script src="./dashboard-upgrade.js"></script>
-<script src="./process-insights.js"></script>
-<script src="./quality-risk-detection.js"></script>
-  
-<script>
-let currentSlide = 0;
-let slideTimer;
+  <script src="./quality-analysis.js"></script>
+  <script src="./dashboard-upgrade.js"></script>
+  <script src="./process-insights.js"></script>
+  <script src="./quality-risk-detection.js"></script>
 
-function showSlide(index) {
-  const slides = document.querySelectorAll('.slide');
-  const dots = document.querySelectorAll('.slide-dots button');
+  <!-- Hero Slider JavaScript -->
+  <script>
+    let currentHeroSlide = 0;
+    let heroSlideTimer;
 
-  if (slides.length === 0) return;
+    function showHeroSlide(index) {
+      const slides = document.querySelectorAll('.hero-slide');
+      const dots = document.querySelectorAll('.hero-dots button');
+      const counter = document.getElementById('heroCurrent');
 
-  currentSlide = (index + slides.length) % slides.length;
+      if (!slides.length) return;
 
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === currentSlide);
-  });
+      currentHeroSlide = (index + slides.length) % slides.length;
 
-  dots.forEach((dot, i) => {
-    dot.style.background = i === currentSlide ? '#35c6d5' : '#aaa';
-  });
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentHeroSlide);
+      });
 
-  clearInterval(slideTimer);
-  slideTimer = setInterval(() => changeSlide(1), 4000);
-}
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentHeroSlide);
+      });
 
-function changeSlide(direction) {
-  showSlide(currentSlide + direction);
-}
+      if (counter) {
+        counter.textContent = String(currentHeroSlide + 1).padStart(2, '0');
+      }
 
-showSlide(0);
-</script>
+      clearInterval(heroSlideTimer);
+
+      heroSlideTimer = setInterval(() => {
+        changeHeroSlide(1);
+      }, 5000);
+    }
+
+    function changeHeroSlide(direction) {
+      showHeroSlide(currentHeroSlide + direction);
+    }
+
+    showHeroSlide(0);
+  </script>
 
 </body>
 </html>
