@@ -1797,3 +1797,29 @@ body[data-theme="light"] .kpi-card-enhanced h2 {
         font-size: 14px;
     }
 }
+
+/* =====================================
+   COMPACT WAFER RECORDS TABLE
+===================================== */
+
+#tableContainer {
+    max-height: 520px;
+    overflow-y: auto;
+    overflow-x: auto;
+    border-radius: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #35c6d5 #14243a;
+}
+
+/* Keep table header visible while scrolling */
+#tableContainer thead th {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #142b43;
+}
+
+/* Smooth scrolling */
+#tableContainer {
+    scroll-behavior: smooth;
+}
