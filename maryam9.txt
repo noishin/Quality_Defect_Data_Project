@@ -1,0 +1,1 @@
+this dashboard has a dark mode toggle and a four-slide image carousel.
