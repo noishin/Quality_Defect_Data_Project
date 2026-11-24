@@ -1,0 +1,1 @@
+this project is an interactive dashboard for analyzing semicondactor wafer quality throught process monitoring, statistical outlier detection, and data filtering.
