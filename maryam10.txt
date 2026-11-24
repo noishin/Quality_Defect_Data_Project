@@ -1,0 +1,1 @@
+the dashboard has a parameter selector where you can choose temperature, gas flow, etch rate, voltage, or current .
