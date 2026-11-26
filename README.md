@@ -646,3 +646,79 @@ These considerations help ensure that the analytical outputs are interpreted app
 | Deployment Platform | GitHub Pages |
 
 ---
+
+---
+
+<div align="center">
+
+## 🌟 PROJECT HIGHLIGHTS
+
+<table>
+<tr>
+<td align="center" width="25%">
+<h3>📊</h3>
+<b>Data Visualization</b>
+<br>
+<sub>Interactive charts and statistical insights</sub>
+</td>
+<td align="center" width="25%">
+<h3>🔍</h3>
+<b>Anomaly Detection</b>
+<br>
+<sub>IQR-based statistical screening</sub>
+</td>
+<td align="center" width="25%">
+<h3>⚙️</h3>
+<b>Process Analysis</b>
+<br>
+<sub>Manufacturing stage comparison</sub>
+</td>
+<td align="center" width="25%">
+<h3>📁</h3>
+<b>Data Export</b>
+<br>
+<sub>Filtered records in CSV format</sub>
+</td>
+</tr>
+</table>
+
+<br>
+
+## 👥 MEET THE TEAM
+
+**Developed with collaboration and dedication**
+
+| Team Member | Role |
+|---|---|
+| Noushin Alighardashi | Project Lead & Frontend/UI Developer |
+| Arefeh Hosseini | Data Analysis & Statistical Features |
+| Madieh Masoumi | Frontend Development |
+| Maryam Bigdeli | Data Visualization & Dashboard Features |
+
+<br>
+
+## 🎓 ABOUT THIS PROJECT
+
+This project was developed as part of an academic course in Information Technology, combining web development, data visualization, and statistical analysis to explore semiconductor manufacturing data.
+
+<br>
+
+## 💚 ACKNOWLEDGMENTS
+
+Special thanks to everyone who contributed to the development, testing, and improvement of this project.
+
+<br>
+
+<a href="https://github.com/noishin/Quality_Defect_Data_Project">
+<img src="https://img.shields.io/badge/⭐_Star_This_Repository-181717?style=for-the-badge&logo=github&logoColor=white" alt="Star this repository">
+</a>
+
+<br><br>
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&pause=1200&color=16A085&center=true&vCenter=true&width=650&lines=Turning+Data+into+Insights;Understanding+Processes+Through+Data;Thank+You+for+Exploring+Our+Project!" alt="Footer Animation">
+
+<br>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:16A085,100:1B4965&height=120&section=footer" width="100%" alt="Footer">
+
+</div>
