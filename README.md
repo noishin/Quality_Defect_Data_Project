@@ -1,41 +1,67 @@
 
-<!-- ====================================== -->
+<!-- ======================================== -->
+<!-- QUALITY DEFECT DATA DASHBOARD -->
 <!-- PROJECT HEADER -->
-<!-- ====================================== -->
+<!-- ======================================== -->
 
 <!-- Top Wave Banner -->
-![Quality Defect Data Dashboard](https://capsule-render.vercel.app/api?type=waving&color=0:0F766E,50:115E59,100:172554&height=220&section=header&text=Quality%20Defect%20Data%20Dashboard&fontSize=34&fontColor=FFFFFF&fontAlignY=38&desc=Semiconductor%20Wafer%20Quality%20%26%20Process%20Analysis&descSize=16&descAlignY=60&descColor=E2E8F0)
+![Quality Defect Data Dashboard](https://camo.githubusercontent.com/8c1d5aa10aa93e73c0019608af39ea5c3a80432c877cb401b6ac458798eb1ff7/68747470733a2f2f63617073756c652d72656e6465722e76657263656c2e6170702f6170693f747970653d776176696e6726636f6c6f723d303a3046373636452c35303a3131354535392c3130303a313732353534266865696768743d3232302673656374696f6e3d68656164657226746578743d5175616c6974792532304465666563742532304461746125323044617368626f61726426666f6e7453697a653d333426666f6e74436f6c6f723d46464646464626666f6e74416c69676e593d333826646573633d53656d69636f6e647563746f7225323057616665722532305175616c69747925323025323625323050726f63657373253230416e616c79736973266465736353697a653d31362664657363416c69676e593d36302664657363436f6c6f723d453245384630)
 
-<!-- Animated Introduction -->
-![Project Introduction](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&duration=3000&pause=1000&color=0D9488&center=true&vCenter=true&width=700&lines=Explore+Semiconductor+Data;Monitor+Manufacturing+Processes;Detect+Statistical+Anomalies;Turn+Data+into+Insights)
+<!-- Animated Project Introduction -->
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&duration=3000&pause=1000&color=0D9488&center=true&vCenter=true&width=700&lines=Explore+Semiconductor+Data;Monitor+Manufacturing+Processes;Detect+Statistical+Anomalies;Turn+Data+into+Insights" alt="Project Introduction" />
+</p>
 
----
+<br>
 
-## 📸 Dashboard Preview
+<!-- Dashboard Preview -->
+<h2 align="center">📊 Dashboard Preview</h2>
 
-[![Semiconductor Wafer Quality Dashboard](https://raw.githubusercontent.com/noishin/Quality_Defect_Data_Project/main/dashboard-preview.png)](https://noishin.github.io/Quality_Defect_Data_Project/)
+<p align="center">
+  <a href="https://noishin.github.io/Quality_Defect_Data_Project/">
+    <img
+      src="https://raw.githubusercontent.com/noishin/Quality_Defect_Data_Project/main/dashboard-preview.png"
+      width="100%"
+      alt="Semiconductor Wafer Quality Dashboard"
+    />
+  </a>
+</p>
 
 <p align="center">
   <i>Interactive Semiconductor Wafer Quality &amp; Process Analysis Dashboard</i>
 </p>
 
----
+<br>
 
 <!-- Project Links -->
+<h3 align="center">Explore the Project</h3>
 
-[![Live Dashboard](https://img.shields.io/badge/Explore-Live_Dashboard-0F766E?style=for-the-badge&logo=googlechrome&logoColor=white)](https://noishin.github.io/Quality_Defect_Data_Project/)
-[![GitHub Repository](https://img.shields.io/badge/View-GitHub_Repository-172554?style=for-the-badge&logo=github&logoColor=white)](https://github.com/noishin/Quality_Defect_Data_Project)
-[![Kaggle Dataset](https://img.shields.io/badge/Explore-Dataset-20A4F3?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data)
+<p align="center">
+  <a href="https://noishin.github.io/Quality_Defect_Data_Project/">
+    <img src="https://img.shields.io/badge/LIVE-DASHBOARD-0F766E?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Dashboard" />
+  </a>
+  <a href="https://github.com/noishin/Quality_Defect_Data_Project">
+    <img src="https://img.shields.io/badge/GITHUB-REPOSITORY-172554?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository" />
+  </a>
+  <a href="https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data">
+    <img src="https://img.shields.io/badge/KAGGLE-DATASET-20A4F3?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle Dataset" />
+  </a>
+</p>
+
+<br>
 
 <!-- Technologies -->
+<h3 align="center">Built With</h3>
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=flat-square&logo=chart.js&logoColor=white)
-![Data Analysis](https://img.shields.io/badge/Data-Analysis-0F766E?style=flat-square)
-![Statistical Analysis](https://img.shields.io/badge/Statistical-Analysis-172554?style=flat-square)
-![Team](https://img.shields.io/badge/Team-4_Members-6D28D9?style=flat-square)
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3" />
+  <img src="https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/Chart.js-FF6384?style=flat-square&logo=chart.js&logoColor=white" alt="Chart.js" />
+  <img src="https://img.shields.io/badge/Data-Analysis-0F766E?style=flat-square" alt="Data Analysis" />
+  <img src="https://img.shields.io/badge/Statistical-Analysis-172554?style=flat-square" alt="Statistical Analysis" />
+  <img src="https://img.shields.io/badge/Team-4_Members-6D28D9?style=flat-square" alt="Team" />
+</p>
 
 <p align="center">
   <b>Data Analysis · Statistical Monitoring · Anomaly Detection · Interactive Visualization</b>
@@ -43,7 +69,7 @@
 
 ---
 
-
+<!-- END OF PROJECT HEADER -->
 
 # 📑 Table of Contents
 
