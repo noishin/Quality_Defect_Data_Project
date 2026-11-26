@@ -646,27 +646,3 @@ These considerations help ensure that the analytical outputs are interpreted app
 | Deployment Platform | GitHub Pages |
 
 ---
-<!-- Animated Title -->
-[کد Typing SVG]
-
-<!-- Project Links -->
-[کد Badgeها]
-
----
-
-<!-- Dashboard Preview -->
-![Dashboard Preview](dashboard-preview.png)
-
----
-
-<!-- Technologies & Tools -->
-[کد آیکون‌های فناوری]
-
----
-
-<!-- Project Overview -->
-### Quality Defect Data Dashboard
-
-**From Manufacturing Data to Data-Driven Insights.**
-
-*Developed collaboratively as a university academic project.*
