@@ -4,12 +4,6 @@
 
 An interactive web-based dashboard for exploring semiconductor manufacturing data, monitoring process parameters, analyzing production stages, and identifying unusual observations through statistical methods and data visualization.
 
-[![Live Dashboard](https://img.shields.io/badge/Live_Demo-Visit_Dashboard-16A085?style=for-the-badge&logo=googlechrome&logoColor=white)](https://noishin.github.io/Quality_Defect_Data_Project/)
-
-[![GitHub Repository](https://img.shields.io/badge/GitHub-View_Repository-24292F?style=for-the-badge&logo=github&logoColor=white)](https://github.com/noishin/Quality_Defect_Data_Project)
-
-[![Kaggle Dataset](https://img.shields.io/badge/Kaggle-View_Dataset-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data)
-
 <div align="center">
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=25&pause=1000&color=16A085&center=true&vCenter=true&width=700&lines=Semiconductor+Wafer+Quality+Analysis;Process+Monitoring+%26+Data+Visualization;Statistical+Anomaly+Detection" alt="Typing SVG" />
