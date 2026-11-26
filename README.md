@@ -54,8 +54,6 @@
 ---
 
 
-![Dashboard Preview](dashboard-preview.png)
-
 ## 📑 Table of Contents
 
 1. [Project Overview](#1-project-overview)
