@@ -4,18 +4,17 @@
 
 An interactive web-based dashboard for exploring semiconductor manufacturing data, monitoring process parameters, analyzing production stages, and identifying unusual observations through statistical methods and data visualization.
 
-[![Live Demo](https://img.shields.io/badge/Live-Dashboard-00b894?style=for-the-badge&logo=googlechrome&logoColor=white)](https://noishin.github.io/Quality_Defect_Data_Project/)
+[![Live Dashboard](https://img.shields.io/badge/Live_Demo-Visit_Dashboard-16A085?style=for-the-badge&logo=googlechrome&logoColor=white)](https://noishin.github.io/Quality_Defect_Data_Project/)
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/noishin/Quality_Defect_Data_Project)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-View_Repository-24292F?style=for-the-badge&logo=github&logoColor=white)](https://github.com/noishin/Quality_Defect_Data_Project)
 
-[![Dataset](https://img.shields.io/badge/Dataset-Kaggle-20BEFF?style=for-the-badge&logo=kaggle)](https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data)
+[![Kaggle Dataset](https://img.shields.io/badge/Kaggle-View_Dataset-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data)
 
-![HTML5](https://img.shields.io/badge/HTML5-orange?logo=html5)
-![CSS3](https://img.shields.io/badge/CSS3-blue?logo=css3)
-![JavaScript](https://img.shields.io/badge/JavaScript-yellow?logo=javascript)
-![Chart.js](https://img.shields.io/badge/Chart.js-ff6384?logo=chartdotjs)
-![Team](https://img.shields.io/badge/Team-4%20Members-blueviolet)
-
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=flat-square&logo=chartdotjs&logoColor=white)
+![Team](https://img.shields.io/badge/Team-4_Members-7952B3?style=flat-square)
 ---
 
 ![Dashboard Preview](dashboard-preview.png)
