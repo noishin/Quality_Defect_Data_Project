@@ -2,10 +2,12 @@
 
 ### Semiconductor Wafer Quality & Process Analysis
 
-An interactive dashboard for exploring semiconductor manufacturing data, monitoring process parameters, and identifying unusual observations through data visualization and statistical analysis.
+An interactive web-based dashboard for exploring semiconductor manufacturing data, monitoring process parameters, analyzing production stages, and identifying unusual observations through statistical methods and data visualization.
 
 [![Live Demo](https://img.shields.io/badge/Live-Dashboard-00b894?style=for-the-badge&logo=googlechrome&logoColor=white)](https://noishin.github.io/Quality_Defect_Data_Project/)
+
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/noishin/Quality_Defect_Data_Project)
+
 [![Dataset](https://img.shields.io/badge/Dataset-Kaggle-20BEFF?style=for-the-badge&logo=kaggle)](https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data)
 
 ![HTML5](https://img.shields.io/badge/HTML5-orange?logo=html5)
@@ -16,29 +18,22 @@ An interactive dashboard for exploring semiconductor manufacturing data, monitor
 
 ---
 
-## 📸 Dashboard Preview
-
-![Quality Defect Data Dashboard](./dashboard-preview.png)
-
-*Main interface of the Quality Defect Data Dashboard.*
-
----
-
 ## 📑 Table of Contents
 
 1. [Project Overview](#1-project-overview)
 2. [Project Objectives](#2-project-objectives)
 3. [Key Performance Indicators](#3-key-performance-indicators)
-4. [Analytical Features](#4-analytical-features)
+4. [Dashboard Features](#4-dashboard-features)
 5. [Statistical Methodology](#5-statistical-methodology)
 6. [Dataset](#6-dataset)
-7. [Technologies and Tools](#7-technologies-and-tools)
-8. [Project Structure](#8-project-structure)
-9. [Access and Installation](#9-access-and-installation)
-10. [Team Members](#10-team-members)
-11. [Roles and Responsibilities](#11-roles-and-responsibilities)
-12. [Project Scope and Limitations](#12-project-scope-and-limitations)
-13. [Academic Context](#13-academic-context)
+7. [Advanced Data Analysis](#7-advanced-data-analysis)
+8. [Technologies and Tools](#8-technologies-and-tools)
+9. [Project Structure](#9-project-structure)
+10. [Access and Installation](#10-access-and-installation)
+11. [Team Members](#11-team-members)
+12. [Roles and Responsibilities](#12-roles-and-responsibilities)
+13. [Project Scope and Limitations](#13-project-scope-and-limitations)
+14. [Academic Context](#14-academic-context)
 
 ---
 
@@ -46,11 +41,11 @@ An interactive dashboard for exploring semiconductor manufacturing data, monitor
 
 **Quality Defect Data Dashboard** is an interactive web-based data analysis and visualization project developed to explore semiconductor wafer manufacturing data and monitor important process-related quality indicators.
 
-Semiconductor manufacturing involves multiple production stages and requires careful monitoring of operational parameters. Understanding variations in these parameters can provide valuable insights into manufacturing processes and help identify unusual observations that may require further investigation.
+Semiconductor manufacturing involves multiple production stages and requires careful monitoring of operational parameters. Variations in temperature, pressure, gas flow, and other manufacturing measurements can provide useful information about process behavior.
 
-This project transforms semiconductor manufacturing records into an interactive analytical environment through statistical indicators, data visualizations, process comparisons, and wafer-level records.
+This project transforms semiconductor manufacturing records into an interactive analytical environment through statistical indicators, data visualizations, process comparisons, correlation analysis, and wafer-level records.
 
-The dashboard provides a centralized interface for exploring manufacturing data, examining process characteristics, and interpreting quality-related information.
+The dashboard provides a centralized interface for exploring manufacturing data, examining process characteristics, comparing production stages, and identifying statistically unusual observations.
 
 ## 2. Project Objectives
 
@@ -58,14 +53,17 @@ The primary objectives of this project are:
 
 - Explore and organize semiconductor wafer manufacturing data.
 - Monitor key process indicators through a KPI-based dashboard.
-- Analyze temperature, pressure, and etch-rate measurements.
+- Analyze temperature, pressure, gas flow, and etch-rate measurements.
 - Visualize wafer distribution across manufacturing stages.
 - Examine variations in manufacturing parameters.
 - Investigate relationships between selected process variables.
+- Analyze correlations between manufacturing parameters.
 - Compare process characteristics across different manufacturing stages.
-- Identify statistically unusual observations using an outlier detection method.
-- Provide an interactive interface for searching and exploring individual wafer records.
-- Present manufacturing information in a clear and accessible visual format.
+- Identify statistically unusual observations using the Interquartile Range (IQR) method.
+- Evaluate potential quality risks across manufacturing stages.
+- Provide interactive search and filtering functionality for wafer records.
+- Enable users to export filtered manufacturing records in CSV format.
+- Present manufacturing information through an accessible and interactive interface.
 
 ## 3. Key Performance Indicators (KPIs)
 
@@ -78,49 +76,173 @@ The dashboard presents six primary indicators that summarize the manufacturing d
 | **Average Temperature** | Average process temperature (°C) |
 | **Average Pressure** | Average chamber pressure (Torr) |
 | **Average Etch Rate** | Average etching rate (nm/min) |
-| **Data Completeness** | Valid numeric parameter values |
+| **Data Completeness** | Percentage of valid numeric parameter values |
 
 These indicators provide an initial overview of the dataset and serve as a starting point for more detailed analysis.
 
-## 4. Analytical Features
+## 4. Dashboard Features
 
-The dashboard includes several analytical modules designed to examine different aspects of semiconductor manufacturing data.
+The dashboard includes several interactive modules designed to examine different aspects of semiconductor manufacturing data.
 
-### 4.1 Process Distribution
+### 4.1 Interactive Hero Slider
 
-Visualizes the number of wafers recorded in each manufacturing stage. It provides an overview of how records are distributed across the production process.
+A four-slide image presentation introduces semiconductor manufacturing, microchip technology, automated wafer production, and quality inspection.
 
-### 4.2 Parameter Variation
+Users can navigate between slides using navigation arrows and slide indicators. The slider also changes slides automatically.
 
-Examines the variation of a selected manufacturing parameter across individual wafer records, allowing users to explore changes and identify unusual fluctuations.
+### 4.2 Dark and Light Mode
 
-### 4.3 Parameter Correlation
+The dashboard supports two visual themes:
 
-Explores the relationship between temperature and etch rate. The visualization supports exploratory analysis of how selected process variables change in relation to one another.
+- Dark Mode
+- Light Mode
 
-### 4.4 Process Stage Comparison
+Users can switch between themes using the theme toggle button. The selected preference is stored in the browser's local storage.
 
-Compares the average value of a selected parameter across different manufacturing stages, helping users examine differences in process behavior.
+### 4.3 Process Distribution
 
-### 4.5 Process Quality Monitoring
+Visualizes the number of wafers recorded in each manufacturing stage, providing an overview of production record distribution.
 
-Uses the **Interquartile Range (IQR)** method to identify observations outside the statistical range of selected process parameters.
+### 4.4 Parameter Variation
 
-Detected observations are flagged for further investigation. They are statistical outliers and should not automatically be interpreted as defective wafers.
+Examines the variation of selected manufacturing parameters across wafer records.
 
-### 4.6 Wafer Quality Records
+Available parameters include:
 
-Provides a structured table for displaying and exploring individual manufacturing records.
+- Temperature
+- Pressure
+- Gas Flow
+- Etch Rate
+- Voltage
+- Current
 
-Users can search records using:
+Users can select a parameter to explore its variation.
+
+### 4.5 Parameter Correlation
+
+Visualizes the relationship between temperature and etch rate through a scatter plot.
+
+This visualization supports exploratory analysis of relationships between selected manufacturing variables.
+
+### 4.6 Process Stage Comparison
+
+Compares the average value of a selected manufacturing parameter across different production stages.
+
+Users can select different parameters to examine variations in process behavior.
+
+### 4.7 Process Quality Monitoring
+
+Provides statistical analysis of manufacturing parameters using the Interquartile Range (IQR) method.
+
+The module includes:
+
+- Total detected anomalies.
+- Number of parameters analyzed.
+- Anomaly summaries by parameter.
+- Identification of potentially unusual wafer records.
+- Parameter-based investigation and filtering.
+
+Detected observations are statistical outliers and should not automatically be interpreted as defective wafers.
+
+### 4.8 Wafer Quality Records
+
+Provides a structured table for displaying individual manufacturing records.
+
+The table includes:
 
 - Wafer ID
-- Manufacturing process step
-- Process metric
+- Pressure
+- Gas Flow
+- Etch Rate
+- Voltage
+- Current
+- Process Step
+
+Users can search records using wafer identifiers, manufacturing stages, and available process measurements.
+
+### 4.9 Interactive Search and Filtering
+
+Users can explore the dataset through:
+
+- Text-based search.
+- Manufacturing process stage filtering.
+- Dynamic table updates.
+
+The dashboard also updates its analytical components according to the currently filtered records.
+
+### 4.10 CSV Export
+
+The dashboard provides a CSV export feature that allows users to download the currently filtered wafer records.
+
+The exported file contains:
+
+- Wafer ID
+- Temperature
+- Pressure
+- Gas Flow
+- Etch Rate
+- Voltage
+- Current
+- Process Step
+
+This feature supports further analysis using spreadsheet applications and other data analysis tools.
+
+### 4.11 Advanced Data Insights
+
+An additional analytical module provides statistical summaries and a Pearson correlation matrix.
+
+The module includes:
+
+- Number of selected wafers.
+- Average temperature.
+- Average etch rate.
+- Average pressure.
+- Data completeness.
+- Temperature standard deviation.
+- Pearson correlation coefficients between selected manufacturing parameters.
+
+The correlation matrix examines relationships among six process variables.
+
+### 4.12 Process Stage Intelligence
+
+This module provides a statistical comparison of manufacturing stages based on the currently filtered records.
+
+It examines:
+
+- Wafer count in each manufacturing stage.
+- Average temperature.
+- Average pressure.
+- Average etch rate.
+- Potential statistical outliers.
+
+It also provides an automatic analysis of manufacturing stage characteristics.
+
+### 4.13 Quality Risk Detection
+
+This module performs statistical screening of unusual wafer measurements across manufacturing stages.
+
+It evaluates six process parameters:
+
+- Temperature
+- Pressure
+- Gas Flow
+- Etch Rate
+- Voltage
+- Current
+
+The module provides:
+
+- Number of filtered wafers analyzed.
+- Flagged wafer counts across manufacturing stages.
+- Stage-level anomaly rates.
+- Statistical risk classifications.
+- A copyable quality risk report.
+
+Risk classifications are screening indicators based on statistical thresholds and should not be interpreted as confirmed manufacturing defects or predictions of production failure.
 
 ## 5. Statistical Methodology
 
-### Interquartile Range (IQR)
+### 5.1 Interquartile Range (IQR)
 
 The IQR method identifies observations that are statistically distant from the central distribution of a parameter.
 
@@ -132,8 +254,8 @@ IQR = Q_3 - Q_1
 
 Where:
 
-- \(Q_1\): First quartile (25th percentile)
-- \(Q_3\): Third quartile (75th percentile)
+- \(Q_1\): First quartile (25th percentile).
+- \(Q_3\): Third quartile (75th percentile).
 
 The lower and upper boundaries are:
 
@@ -147,7 +269,38 @@ Upper\ Bound = Q_3 + 1.5(IQR)
 
 Observations outside these boundaries are flagged as potential statistical anomalies.
 
+The dashboard applies IQR-based analysis to the available manufacturing parameters.
+
 **Important:** A statistical outlier does not necessarily represent a manufacturing defect. Such observations require further investigation and should be interpreted within the context of the manufacturing process.
+
+### 5.2 Pearson Correlation Coefficient
+
+The advanced data analysis module uses the Pearson correlation coefficient to examine linear relationships between manufacturing parameters.
+
+The coefficient is calculated as:
+
+\[
+r_{xy} =
+\frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}
+{\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2}
+\sqrt{\sum_{i=1}^{n}(y_i-\bar{y})^2}}
+\]
+
+Where:
+
+- \(x_i\) and \(y_i\): Individual observations.
+- \(\bar{x}\) and \(\bar{y}\): Arithmetic means.
+- \(n\): Number of paired observations.
+
+The coefficient ranges from -1 to +1:
+
+| Value | Interpretation |
+|---|---|
+| +1 | Perfect positive linear correlation |
+| 0 | No linear correlation |
+| -1 | Perfect negative linear correlation |
+
+Correlation indicates the strength and direction of a linear relationship. It does not establish causation.
 
 ## 6. Dataset
 
@@ -179,9 +332,45 @@ The project uses the **Semiconductor Wafer Defect Classification Dataset**, avai
 
 **Original Dataset:** [View on Kaggle](https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data)
 
-The dataset is incorporated into the project through the JavaScript data file and serves as the basis for dashboard calculations and visualizations.
+The dataset is incorporated into the project through `data.js` and serves as the basis for dashboard calculations and visualizations.
 
-## 7. Technologies and Tools
+The application currently contains 199 manufacturing records.
+
+## 7. Advanced Data Analysis
+
+In addition to the primary dashboard visualizations, the project includes supplementary analytical components.
+
+### 7.1 Statistical Summary
+
+The dashboard calculates descriptive statistics for selected manufacturing parameters, including:
+
+- Arithmetic mean.
+- Standard deviation.
+- Data completeness.
+- Number of selected records.
+
+### 7.2 Correlation Matrix
+
+A Pearson correlation matrix provides a pairwise comparison of six manufacturing parameters:
+
+- Temperature
+- Pressure
+- Gas Flow
+- Etch Rate
+- Voltage
+- Current
+
+### 7.3 Manufacturing Stage Analysis
+
+The Process Stage Intelligence module compares the five manufacturing stages using average parameter values and potential outlier counts.
+
+### 7.4 Quality Risk Assessment
+
+The Quality Risk Detection module evaluates unusual measurements and summarizes flagged wafers by manufacturing stage.
+
+These analytical components are intended to support exploratory analysis and provide additional insight into manufacturing data.
+
+## 8. Technologies and Tools
 
 | Technology | Purpose |
 |---|---|
@@ -200,41 +389,85 @@ The dashboard follows a browser-based implementation approach.
 
 The dataset is incorporated into the project, processed through JavaScript, and presented through interactive visual components and statistical summaries.
 
-Chart.js supports the graphical representation of manufacturing data, while the dashboard interface provides tools for navigating and exploring the available information.
+Chart.js supports the graphical representation of manufacturing data, while custom JavaScript modules handle filtering, statistical calculations, quality analysis, and interactive functionality.
 
-## 8. Project Structure
+The application does not require a separate backend server or database for its current implementation.
+
+## 9. Project Structure
+
+The repository contains the following files and resources:
 
 ```text
 Quality_Defect_Data_Project/
 │
 ├── index.html
+├── style.css
+│
 ├── data.js
 ├── dashboard.js
 ├── charts.js
-├── quality-analysis.js
 ├── theme.js
-├── style.css
+│
 ├── ai_studio_code(1).js
+├── dashboard-upgrade.js
+├── process-insights.js
+├── quality-analysis.js
+├── quality-risk-detection.js
+│
+├── Quality_Defect_Data_Report.pdf
+│
+├── wafer-in-cleanroom.jpg
+├── microchip-wafer-detail.jpg
+├── automated-wafer-factory.jpg
+├── engineer-inspecting-wafer.jpg
 │
 ├── assets/
 │   └── dashboard-preview.png
 │
+├── maryam1.txt.txt
+├── maryam2.txt
+├── maryam3.txt
+├── maryam4.txt
+├── maryam5.txt
+├── maryam6.txt
+├── maryam7.txt
+├── maryam8.txt
+├── maryam9.txt
+├── maryam10.txt
+│
 └── README.md
 ```
 
+### Main Application Files
+
 | File | Description |
 |---|---|
-| `index.html` | Main structure of the web application |
-| `data.js` | Dataset and manufacturing records |
-| `dashboard.js` | Dashboard functionality and KPI presentation |
-| `charts.js` | Data visualization and chart implementation |
-| `quality-analysis.js` | Statistical quality analysis |
-| `theme.js` | Theme-related functionality |
-| `style.css` | Dashboard styling and layout |
-| `assets/` | Images and other visual resources |
+| `index.html` | Main HTML structure, dashboard sections, and interface elements |
+| `style.css` | Dashboard styling, layout, responsive design, and visual presentation |
+| `data.js` | Semiconductor wafer manufacturing dataset |
+| `dashboard.js` | KPI calculations and dashboard statistics |
+| `charts.js` | Process distribution, parameter variation, correlation, and stage comparison charts |
+| `theme.js` | Dark and Light theme functionality |
+| `ai_studio_code(1).js` | Wafer records table, search, and process-stage filtering |
+| `dashboard-upgrade.js` | Advanced data insights, Pearson correlation matrix, statistical summaries, and CSV export |
+| `process-insights.js` | Process Stage Intelligence and manufacturing stage comparisons |
+| `quality-analysis.js` | IQR-based anomaly detection and investigation |
+| `quality-risk-detection.js` | Statistical quality risk screening and stage-level risk reporting |
+
+### Additional Project Resources
+
+| File or Folder | Description |
+|---|---|
+| `Quality_Defect_Data_Report.pdf` | Project technical report |
+| `wafer-in-cleanroom.jpg` | Semiconductor wafer and cleanroom image |
+| `microchip-wafer-detail.jpg` | Microchip and wafer image |
+| `automated-wafer-factory.jpg` | Automated semiconductor manufacturing image |
+| `engineer-inspecting-wafer.jpg` | Semiconductor quality inspection image |
+| `assets/` | Folder for additional visual resources |
+| `maryam1.txt.txt` – `maryam10.txt` | Text files containing project-related introductory content, descriptions, and contribution notes |
 | `README.md` | Project documentation |
 
-## 9. Access and Installation
+## 10. Access and Installation
 
 ### Online Access
 
@@ -262,13 +495,11 @@ cd Quality_Defect_Data_Project
 
 Open `index.html` in a modern web browser.
 
-If external libraries are loaded through a CDN, an active internet connection is required.
+An active internet connection is required to load Chart.js from its CDN.
 
-Make sure all referenced files are located in the correct directories.
+Make sure all project files and image resources remain in their original relative paths.
 
----
-
-## 10. Team Members
+## 11. Team Members
 
 This project was developed collaboratively by a team of four members as part of a university Information Technology course.
 
@@ -277,11 +508,11 @@ This project was developed collaboratively by a team of four members as part of 
 | 01 | **Noushin Alighardashi** | [@noishin](https://github.com/noishin) |
 | 02 | **Arefeh Hosseini** | [@Arefehoseini](https://github.com/Arefehoseini) |
 | 03 | **Madieh Masoumi** | [@mahdieh13851106-cell](https://github.com/mahdieh13851106-cell) |
-| 04 | **Maryam Bigdeli** | [@bigdeli-maryam](https://github.com/bigdeli-maryam) |
+| 04 | **Maryam Bigdeli** | [@bigdelı-maryam](https://github.com/bigdeli-maryam) |
 
-## 11. Roles and Responsibilities
+## 12. Roles and Responsibilities
 
-The project was developed collaboratively by four team members, with each member contributing to different aspects of project management, interface development, data analysis, visualization, and technical documentation.
+The project was developed collaboratively by four team members, with each member contributing to different aspects of project management, interface development, data analysis, visualization, testing, and technical documentation.
 
 ### 1. Noushin Alighardashi
 
@@ -320,10 +551,10 @@ GitHub: [@Arefehoseini](https://github.com/Arefehoseini)
 - Working with HTML, CSS, and JavaScript to build the web application.
 - Supporting the implementation of interactive dashboard features.
 - Contributing to slider development and visual interface functionality.
-- Testing the dashboard locally on different computers and browsers.
-- Checking the functionality of data tables, search features, and charts.
-- Identifying browser console errors and supporting debugging and code correction.
-- Improving the functionality and usability of the web application.
+- Preparing instructions for testing the dashboard locally on different computers and browsers.
+- Providing guidance for checking data tables, search functionality, and charts.
+- Documenting browser console error identification and troubleshooting procedures.
+- Supporting debugging and code correction workflows.
 
 GitHub: [@mahdieh13851106-cell](https://github.com/mahdieh13851106-cell)
 
@@ -340,7 +571,7 @@ GitHub: [@mahdieh13851106-cell](https://github.com/mahdieh13851106-cell)
 - Preparing descriptions of parameter selection and interactive data exploration.
 - Creating introductory messages and project-related documentation.
 
-GitHub: [@bigdeli-maryam](https://github.com/bigdeli-maryam)
+GitHub: [@bigdelı-maryam](https://github.com/bigdeli-maryam)
 
 ### Team Collaboration
 
@@ -348,27 +579,23 @@ Although each team member had primary responsibilities, the project involved col
 
 The integration of project management, interface design, frontend development, data management, statistical analysis, visualization, testing, and technical documentation contributed to the development of an interactive dashboard for exploring semiconductor manufacturing data and analyzing process-related quality indicators.
 
-### Team Collaboration
-
-Although each member has a primary area of responsibility, the project represents a collaborative effort.
-
-The integration of project coordination, interface design, data management, frontend development, and data visualization contributes to the overall functionality and presentation of the dashboard.
-
-## 12. Project Scope and Limitations
+## 13. Project Scope and Limitations
 
 The project focuses on exploratory data analysis, statistical summaries, and interactive visualization of semiconductor manufacturing records.
 
 The following considerations are important when interpreting its results:
 
 - Statistical outliers are indicators for further investigation, not confirmed manufacturing defects.
+- Quality risk classifications are statistical screening indicators and do not confirm actual manufacturing failures.
 - Correlation visualizations describe relationships between variables and do not establish causation.
 - Dashboard statistics depend on the dataset currently incorporated into the application.
 - Data completeness refers to the validity of the numeric parameter values evaluated by the dashboard.
+- The project uses predefined statistical methods rather than a trained machine learning prediction model.
 - The project is intended as an academic data analysis and visualization application, rather than a certified industrial quality-control system.
 
 These considerations help ensure that the analytical outputs are interpreted appropriately.
 
-## 13. Academic Context
+## 14. Academic Context
 
 | Category | Description |
 |---|---|
