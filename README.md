@@ -281,52 +281,72 @@ This project was developed collaboratively by a team of four members as part of 
 
 ## 11. Roles and Responsibilities
 
+The project was developed collaboratively by four team members, with each member contributing to different aspects of project management, interface development, data analysis, visualization, and technical documentation.
+
 ### 1. Noushin Alighardashi
 
-**Project Lead & UI/UX Designer**
+**Project Lead & Frontend/UI Developer**
 
-- Coordinating the team and organizing the development process.
-- Supervising project progress and coordinating assigned tasks.
-- Designing the overall visual identity and layout of the dashboard.
-- Defining the visual presentation of KPI cards and dashboard components.
-- Focusing on interface consistency, visual hierarchy, and user experience.
+- Leading and coordinating the project team and managing the overall development workflow.
+- Planning project activities, supervising progress, and coordinating team responsibilities.
+- Publishing and deploying the dashboard using GitHub Pages.
+- Implementing Dark Mode functionality.
+- Designing and implementing data tables for structured information presentation.
+- Developing interactive filtering functionality for data exploration.
+- Enhancing the website's visual design, layout, and overall user experience.
+- Improving the dashboard's visual consistency, usability, and interface presentation.
 
-GitHub: [noishin](https://github.com/noishin)
+GitHub: [@noishin](https://github.com/noishin)
 
 ### 2. Arefeh Hosseini
 
-**Data Management & Technical Documentation Specialist**
+**Data Management, Statistical Analysis & Technical Documentation Specialist**
 
-- Designing and implementing the wafer records table within the dashboard website.
-- Organizing and structuring manufacturing records for clear and accessible presentation.
-- Preparing and authoring the project's technical report.
-- Documenting the project workflow, implementation process, and analytical components.
-- Supporting the organization and presentation of project-related information.
+- Designing and implementing the wafer records table.
+- Developing the correlation matrix and advanced data analysis components.
+- Implementing Process Stage Intelligence to support the analysis of different manufacturing stages.
+- Developing an IQR-based statistical quality risk detection system.
+- Implementing CSV export functionality for filtered dataset records.
+- Improving interface compatibility with Dark and Light themes.
+- Preparing the project's technical report and documenting its implementation and analytical workflow.
 
-GitHub: [Arefehoseini](https://github.com/Arefehoseini)
+GitHub: [@Arefehoseini](https://github.com/Arefehoseini)
 
 ### 3. Madieh Masoumi
 
-**Frontend Developer**
+**Frontend Developer & Interface Testing Specialist**
 
-- Developing the dashboard's frontend components.
-- Implementing the website structure and interface functionality.
-- Working with HTML, CSS, and JavaScript.
+- Developing and implementing frontend components of the dashboard.
+- Working with HTML, CSS, and JavaScript to build the web application.
 - Supporting the implementation of interactive dashboard features.
+- Contributing to slider development and visual interface functionality.
+- Testing the dashboard locally on different computers and browsers.
+- Checking the functionality of data tables, search features, and charts.
+- Identifying browser console errors and supporting debugging and code correction.
 - Improving the functionality and usability of the web application.
 
-GitHub: [mahdieh13851106-cell](https://github.com/mahdieh13851106-cell)
+GitHub: [@mahdieh13851106-cell](https://github.com/mahdieh13851106-cell)
 
 ### 4. Maryam Bigdeli
 
-**Data Analysis & Visualization Specialist**
+**Data Analysis, Visualization & Dashboard Features Specialist**
 
-- Analyzing semiconductor manufacturing data and process-related parameters.
-- Contributing to the development and organization of analytical charts and visualizations.
-- Examining statistical indicators and manufacturing parameters, including temperature, pressure, and etch rate.
-- Supporting the visual presentation and interpretation of analytical results.
+- Contributing to the definition and documentation of the project topic: Semiconductor Wafer Quality Analysis.
+- Preparing introductory and descriptive content for the dashboard.
+- Developing explanations of the dashboard's purpose, functionality, and analytical capabilities.
+- Documenting the dashboard as an interactive platform for process monitoring and statistical anomaly detection.
+- Implementing Dark Mode functionality.
+- Adding an image slideshow to the dashboard.
+- Preparing descriptions of parameter selection and interactive data exploration.
+- Creating introductory messages and project-related documentation.
 
-GitHub: [bigdeli-maryam](https://github.com/bigdeli-maryam)
+GitHub: [@bigdeli-maryam](https://github.com/bigdeli-maryam)
+
+### Team Collaboration
+
+Although each team member had primary responsibilities, the project involved collaboration across different development areas.
+
+The integration of project management, interface design, frontend development, data management, statistical analysis, visualization, testing, and technical documentation contributed to the development of an interactive dashboard for exploring semiconductor manufacturing data and analyzing process-related quality indicators.
 
 ### Team Collaboration
 
