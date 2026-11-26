@@ -1,23 +1,54 @@
 
-![Quality Defect Data Dashboard](https://placehold.co/1200x240/115E59/FFFFFF/png?text=QUALITY+DEFECT+DATA+DASHBOARD)
+<!-- PROJECT HEADER -->
+
+<!-- Top Wave Banner -->
+<p align="center">
+  <img
+    src="https://capsule-render.vercel.app/api?type=waving&color=0:0F766E,50:115E59,100:172554&height=220&section=header&text=Quality%20Defect%20Data%20Dashboard&fontSize=34&fontColor=FFFFFF&fontAlignY=38&desc=Semiconductor%20Wafer%20Quality%20%26%20Process%20Analysis&descSize=16&descAlignY=60&descColor=E2E8F0"
+    width="100%"
+    alt="Quality Defect Data Dashboard Header"
+  />
+</p>
+
+<!-- Actual Dashboard Preview -->
+<h2 align="center">Dashboard Preview</h2>
 
 <p align="center">
   <a href="https://noishin.github.io/Quality_Defect_Data_Project/">
-    <img src="https://img.shields.io/badge/Explore-Live_Dashboard-0F766E?style=for-the-badge" />
-  </a>
-  <a href="https://github.com/noishin/Quality_Defect_Data_Project">
-    <img src="https://img.shields.io/badge/View-GitHub_Repository-172554?style=for-the-badge" />
-  </a>
-  <a href="https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data">
-    <img src="https://img.shields.io/badge/Explore-Dataset-20A4F3?style=for-the-badge" />
+    <img
+      src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fnoishin.github.io%2FQuality_Defect_Data_Project%2F?w=1200"
+      width="100%"
+      alt="Semiconductor Wafer Quality Dashboard Preview"
+    />
   </a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/Chart.js-FF6384?style=flat-square&logo=chart.js&logoColor=white" />
+  <i>Interactive Semiconductor Wafer Quality & Process Analysis Dashboard</i>
+</p>
+
+<!-- Project Links -->
+<p align="center">
+  <a href="https://noishin.github.io/Quality_Defect_Data_Project/">
+    <img src="https://img.shields.io/badge/Explore-Live_Dashboard-0F766E?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Dashboard" />
+  </a>
+  <a href="https://github.com/noishin/Quality_Defect_Data_Project">
+    <img src="https://img.shields.io/badge/View-GitHub_Repository-172554?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository" />
+  </a>
+  <a href="https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data">
+    <img src="https://img.shields.io/badge/Explore-Dataset-20A4F3?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle Dataset" />
+  </a>
+</p>
+
+<!-- Technologies -->
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3" />
+  <img src="https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/Chart.js-FF6384?style=flat-square&logo=chart.js&logoColor=white" alt="Chart.js" />
+  <img src="https://img.shields.io/badge/Data-Analysis-0F766E?style=flat-square" alt="Data Analysis" />
+  <img src="https://img.shields.io/badge/Statistical-Analysis-172554?style=flat-square" alt="Statistical Analysis" />
+  <img src="https://img.shields.io/badge/Team-4_Members-6D28D9?style=flat-square" alt="Team" />
 </p>
 
 <p align="center">
@@ -25,6 +56,7 @@
 </p>
 
 ---
+
 
 
 # 📑 Table of Contents
