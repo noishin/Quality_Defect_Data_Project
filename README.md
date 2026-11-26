@@ -18,6 +18,8 @@ An interactive web-based dashboard for exploring semiconductor manufacturing dat
 
 ---
 
+![Dashboard Preview](dashboard-preview.png)
+
 ## 📑 Table of Contents
 
 1. [Project Overview](#1-project-overview)
