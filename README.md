@@ -18,7 +18,35 @@ An interactive web-based dashboard for exploring semiconductor manufacturing dat
 ---
 
 ![Dashboard Preview](dashboard-preview.png)
+<div align="center">
 
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=25&pause=1000&color=16A085&center=true&vCenter=true&width=700&lines=Semiconductor+Wafer+Quality+Analysis;Process+Monitoring+%26+Data+Visualization;Statistical+Anomaly+Detection" alt="Typing SVG" />
+
+<br>
+
+<p>
+An Interactive Dashboard for Semiconductor Manufacturing
+</p>
+
+</div>
+<div align="center">
+
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Explore_Dashboard-16A085?style=for-the-badge)](https://noishin.github.io/Quality_Defect_Data_Project/)
+
+[![GitHub](https://img.shields.io/badge/GitHub-Source_Code-24292F?style=for-the-badge&logo=github)](https://github.com/noishin/Quality_Defect_Data_Project)
+
+[![Kaggle](https://img.shields.io/badge/Kaggle-Dataset-20BEFF?style=for-the-badge&logo=kaggle)](https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data)
+
+</div>
+<h3 align="center">🛠️ Technologies & Tools</h3>
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=html,css,js,github,vscode" />
+  <br><br>
+  <img src="https://img.shields.io/badge/Chart.js-FF6384?style=flat-square&logo=chartdotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/Statistical_Analysis-16A085?style=flat-square" />
+  <img src="https://img.shields.io/badge/Team-4_Members-7952B3?style=flat-square" />
+</p>
 ## 📑 Table of Contents
 
 1. [Project Overview](#1-project-overview)
