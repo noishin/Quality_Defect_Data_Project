@@ -1,39 +1,58 @@
+
+<div align="center">
+
 # 📊 Quality Defect Data Dashboard
 
 ### Semiconductor Wafer Quality & Process Analysis
 
-An interactive web-based dashboard for exploring semiconductor manufacturing data, monitoring process parameters, analyzing production stages, and identifying unusual observations through statistical methods and data visualization.
+<p>
+  An interactive dashboard for exploring semiconductor manufacturing data,<br>
+  monitoring process parameters, and detecting unusual observations through statistical analysis.
+</p>
 
-<div align="center">
-
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=25&pause=1000&color=16A085&center=true&vCenter=true&width=700&lines=Semiconductor+Wafer+Quality+Analysis;Process+Monitoring+%26+Data+Visualization;Statistical+Anomaly+Detection" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=16A085&center=true&vCenter=true&width=750&lines=Semiconductor+Wafer+Quality+Analysis;Advanced+Process+Monitoring;Statistical+Anomaly+Detection;Turning+Manufacturing+Data+into+Insights" alt="Typing SVG" />
 
 <br>
 
-<p>
-An Interactive Dashboard for Semiconductor Manufacturing
-</p>
+<a href="https://noishin.github.io/Quality_Defect_Data_Project/">
+  <img src="https://img.shields.io/badge/🚀_EXPLORE_DASHBOARD-16A085?style=for-the-badge&logoColor=white" alt="Live Dashboard">
+</a>
+<a href="https://github.com/noishin/Quality_Defect_Data_Project">
+  <img src="https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository">
+</a>
+<a href="https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data">
+  <img src="https://img.shields.io/badge/KAGGLE_DATASET-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle Dataset">
+</a>
+
+<br><br>
+
+<img src="dashboard-preview.png" width="95%" alt="Quality Defect Data Dashboard Preview">
+
+<br><br>
 
 </div>
+
+---
+
 <div align="center">
 
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Explore_Dashboard-16A085?style=for-the-badge)](https://noishin.github.io/Quality_Defect_Data_Project/)
+## 🛠️ TECHNOLOGIES & TOOLS
 
-[![GitHub](https://img.shields.io/badge/GitHub-Source_Code-24292F?style=for-the-badge&logo=github)](https://github.com/noishin/Quality_Defect_Data_Project)
+<p>
+  <img src="https://skillicons.dev/icons?i=html,css,js,github,vscode" alt="Technologies">
+</p>
 
-[![Kaggle](https://img.shields.io/badge/Kaggle-Dataset-20BEFF?style=for-the-badge&logo=kaggle)](https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data)
-
-</div>
-<h3 align="center">🛠️ Technologies & Tools</h3>
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,github,vscode" />
-  <br><br>
+<p>
   <img src="https://img.shields.io/badge/Chart.js-FF6384?style=flat-square&logo=chartdotjs&logoColor=white" />
   <img src="https://img.shields.io/badge/Statistical_Analysis-16A085?style=flat-square" />
+  <img src="https://img.shields.io/badge/Data_Visualization-1B4965?style=flat-square" />
   <img src="https://img.shields.io/badge/Team-4_Members-7952B3?style=flat-square" />
 </p>
+
+</div>
+
 ---
+
 
 ![Dashboard Preview](dashboard-preview.png)
 
