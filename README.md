@@ -1,6 +1,34 @@
 
 <div align="center">
 
+<img src="https://capsule-render.vercel.app/api?type=wave&color=0:123B50,50:087E83,100:16A085&height=180&section=header&text=Quality%20Defect%20Data%20Dashboard&fontSize=28&fontColor=ffffff&fontAlignY=38&desc=Semiconductor%20Wafer%20Quality%20%26%20Process%20Analysis&descSize=14&descAlignY=60" width="100%" alt="Project Header">
+
+<br>
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=16A085&center=true&vCenter=true&width=750&lines=Semiconductor+Wafer+Quality+Analysis;Advanced+Process+Monitoring;Statistical+Anomaly+Detection;Turning+Manufacturing+Data+into+Insights" alt="Typing SVG">
+
+<br><br>
+
+<a href="https://noishin.github.io/Quality_Defect_Data_Project/">
+<img src="https://img.shields.io/badge/🚀_LIVE_DASHBOARD-Explore-16A085?style=for-the-badge" alt="Live Dashboard">
+</a>
+<a href="https://github.com/noishin/Quality_Defect_Data_Project">
+<img src="https://img.shields.io/badge/GITHUB-Repository-24292F?style=for-the-badge&logo=github" alt="GitHub">
+</a>
+<a href="https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data">
+<img src="https://img.shields.io/badge/KAGGLE-Dataset-20BEFF?style=for-the-badge&logo=kaggle" alt="Kaggle">
+</a>
+
+<br><br>
+
+<img src="dashboard-preview.png" width="96%" alt="Dashboard Preview">
+
+</div>
+
+---
+
+<div align="center">
+
 # 📊 Quality Defect Data Dashboard
 
 ### Semiconductor Wafer Quality & Process Analysis
