@@ -658,6 +658,7 @@ This project was developed collaboratively by a team of four members as part of 
 - Adding CSV export functionality for filtered records.
 - Supporting dark/light theme compatibility.
 - Preparing the project's technical report and documentation.
+- Developing and writing the initial version of the project's README file, including its structure, overview, and documentation.
 
 **GitHub:** [Arefehoseini](https://github.com/Arefehoseini)
 
