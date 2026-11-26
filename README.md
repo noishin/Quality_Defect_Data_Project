@@ -4,6 +4,9 @@
 <!-- ====================================== -->
 
 <!-- Top Wave Banner -->
+
+![Quality Defect Data Dashboard](https://capsule-render.vercel.app/api?type=waving&color=0:0F766E,50:115E59,100:172554&height=220&section=header&text=Quality%20Defect%20Data%20Dashboard&fontSize=34&fontColor=FFFFFF&fontAlignY=38&desc=Semiconductor%20Wafer%20Quality%20%26%20Process%20Analysis&descSize=16&descAlignY=60&descColor=E2E8F0)
+
 <p align="center">
   <img
     src="https://capsule-render.vercel.app/api?type=waving&color=0:0F766E,50:115E59,100:172554&height=220&section=header&text=Quality%20Defect%20Data%20Dashboard&fontSize=34&fontColor=FFFFFF&fontAlignY=38&desc=Semiconductor%20Wafer%20Quality%20%26%20Process%20Analysis&descSize=16&descAlignY=60&descColor=E2E8F0"
