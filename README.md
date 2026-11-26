@@ -10,14 +10,6 @@ An interactive web-based dashboard for exploring semiconductor manufacturing dat
 
 [![Kaggle Dataset](https://img.shields.io/badge/Kaggle-View_Dataset-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/meruvakodandasuraj/semiconductor-wafer-defect-classification-dataset/data)
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=flat-square&logo=chartdotjs&logoColor=white)
-![Team](https://img.shields.io/badge/Team-4_Members-7952B3?style=flat-square)
----
-
-![Dashboard Preview](dashboard-preview.png)
 <div align="center">
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=25&pause=1000&color=16A085&center=true&vCenter=true&width=700&lines=Semiconductor+Wafer+Quality+Analysis;Process+Monitoring+%26+Data+Visualization;Statistical+Anomaly+Detection" alt="Typing SVG" />
@@ -47,6 +39,10 @@ An Interactive Dashboard for Semiconductor Manufacturing
   <img src="https://img.shields.io/badge/Statistical_Analysis-16A085?style=flat-square" />
   <img src="https://img.shields.io/badge/Team-4_Members-7952B3?style=flat-square" />
 </p>
+---
+
+![Dashboard Preview](dashboard-preview.png)
+
 ## 📑 Table of Contents
 
 1. [Project Overview](#1-project-overview)
