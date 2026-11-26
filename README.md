@@ -644,6 +644,7 @@ This project was developed collaboratively by a team of four members as part of 
 - Contributing to the dashboard's visual design and interface improvements.
 - Working on dashboard tables, filters, and user-interface features.
 - Contributing to the implementation and integration of the dark mode.
+- Researching and sourcing the initial HTML, CSS, and JavaScript code structures used as the foundation for the project.
 
 **GitHub:** [noishin](https://github.com/noishin)
 
